@@ -1,0 +1,169 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-4);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out);
+  grid-column: span var(--card-span, 4);
+}
+
+.card:hover {
+  border-color: var(--color-text);
+}
+
+/* ─── Image placeholder ────────────────────────────────────────────────── */
+.image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-block-end: var(--space-4);
+  background-color: var(--color-surface);
+  position: relative;
+}
+
+.imagePlaceholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-surface);
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+
+/* ─── Content ──────────────────────────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.year {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.title {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+/* Scale title down for smaller cards */
+[data-span="3"] .title {
+  font-size: var(--text-base);
+}
+
+[data-span="12"] .title {
+  font-size: var(--text-lg);
+}
+
+.description {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+  max-width: 55ch;
+  transition: color var(--duration-fast) var(--ease-out);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+
+.card:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-block-start: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.card:hover .tags {
+  opacity: 1;
+}
+
+.tag {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-subtle);
+  padding: 2px var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Grid overlay — reveals underlying grid on hover ─────────────────── */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.card:hover .gridOverlay {
+  opacity: 1;
+}
+
+.gridLine {
+  flex: 1;
+  border-right: 1px solid var(--color-border);
+}
+
+.gridLine:last-child {
+  border-right: none;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .card {
+    grid-column: span min(var(--card-span, 4), 6);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-column: span 12;
+  }
+
+  .description,
+  .tags {
+    opacity: 1;
+    transform: none;
+  }
+
+  .title {
+    font-size: var(--text-base) !important;
+  }
+}

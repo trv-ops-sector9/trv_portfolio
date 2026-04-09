@@ -1,0 +1,111 @@
+/* ─── Authenticated view ──────────────────────────────────────────────── */
+.content {
+  padding-block: var(--space-6) var(--space-8);
+}
+
+.header {
+  border-top: 1px solid var(--color-border);
+  padding-block-start: var(--space-4);
+  margin-block-end: var(--space-6);
+}
+
+.label {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-block-end: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.note {
+  font-size: var(--text-sm);
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+}
+
+/* ─── Gate (password form) ────────────────────────────────────────────── */
+.gate {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(100dvh - 96px);
+  padding-block-end: var(--space-7);
+}
+
+.gateHeader {
+  margin-block-end: var(--space-5);
+}
+
+.gateTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 360px;
+}
+
+.formLabel {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.formRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.input {
+  flex: 1;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.input:focus {
+  border-color: var(--color-text);
+}
+
+.submit {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-text);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  transition: opacity var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.submit:hover {
+  opacity: 0.8;
+}
+
+.error {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}

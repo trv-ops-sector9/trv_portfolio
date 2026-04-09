@@ -1,0 +1,7 @@
+.section {
+  padding-block-end: var(--space-6);
+}
+
+.grid {
+  padding-block-start: var(--space-5);
+}
