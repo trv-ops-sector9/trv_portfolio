@@ -1,57 +1,58 @@
 # Portfolio Project Status
 
-## Completed (Phase 2 — Content Population)
-
-### Cleanup
-- Deleted all 8 placeholder Work case studies (kept fluent-2-motion-guidelines.md)
-- Deleted all placeholder Projects, Experiments, Blog content files
-- Deleted app/projects/, app/experiments/, app/blog/ directories entirely
-- Removed Projects, Experiments, Writing nav links — now only Work + About
-
-### Fluent 2 Motion Guidelines Case Study
-**File:** `content/work/fluent-2-motion-guidelines.md`
-
-**Status:** Complete with embedded hero video
-- Motion design lead role at Microsoft on Fluent 2 design system
-- 80% of the work — documentation, thinking, specifications
-- Worked with Chris Lorance (senior motion designer) and Andrew Falk (supervisor)
-- Outcome: Shifted motion from afterthought to intentional design process. Motion Token spec adopted by MS central design team.
-
-**Video Implementation:**
-- Video file: `public/fluent-2-motion-hero.mp4` (9.8MB, 21 sec)
-- Renders as full-width 16:9 hero section at top of case study page
-- Added `heroVideo` field to Project type, parsing, and page component
-- Video styled to fill hero with `object-fit: cover`
-
-**Changes Made:**
-- Updated `components/ui/ProjectCard.tsx` — added `heroVideo?: string` to Project interface
-- Updated `lib/content.ts` — extracts heroVideo from frontmatter
-- Updated `app/work/[slug]/page.tsx` — renders video in hero div if heroVideo exists
-- Updated `app/work/[slug]/page.module.css` — video sizing/styling
-- Updated `components/ui/Prose.tsx` — added rehype-raw for HTML rendering (for markdown body text if needed)
-
-**Still Needed:**
-- Screenshots of actual guidelines page, Motion Token spec template, Figma library (can add later as images)
-- These are referenced in the copy but not visually present yet
+## Style Rules
+- No em dashes anywhere in the portfolio. Use periods, commas, colons, or parentheses instead.
+- Copy tone: short sentences, design speak, no AI fluff. Traver writes the final copy.
 
 ---
 
-## Next Steps (Phase 3 — More Work Projects)
+## Completed
 
-**Goal:** Add 2–3 more real Work case studies to flesh out portfolio
+### Phase 1: Identity & Structure
+- Next.js 16 App Router, static export
+- Name: Traver Phillips | Email: traver4@gmail.com | Seattle, WA
+- Domain: https://traverphillips.com
+- Nav: Work, About (all other sections removed)
 
-**Process:**
-1. I ask you about each project: scope, your role, problem, outcomes
-2. You provide facts/context
-3. I write the markdown with real tone (short sentences, design speak, no AI fluff)
-4. Optional: Add heroVideo field to frontmatter if you have video assets
+### Phase 2: Content Cleanup
+- Deleted all placeholder content (blog, experiments, projects, old work stubs)
+- Deleted app/blog/, app/experiments/, app/projects/ directories
 
-**Candidates to discuss:**
-- Other design systems or component library work?
-- Product redesigns or feature work?
-- Research-driven projects?
-- Branding/identity work?
-- Tools or specs you've created?
+### Phase 3: Fluent 2 Motion Guidelines Case Study
+**File:** `content/work/fluent-2-motion-guidelines.md`
+**Status:** Complete and committed
+
+Content:
+- Motion design lead at Microsoft on Fluent 2 design system
+- Worked with Chris Lorance (senior motion designer) and Andrew Falk (supervisor)
+- Covers: public guidelines on fluent2.microsoft.design, motion token spec template, Figma interactive component library
+
+Assets in `public/`:
+- `fluent-2-motion-hero.mp4` (hero video, 10MB)
+- `fluent-2-motion-thumb.png` (card thumbnail, extracted from hero)
+- `FLuent2_Motinguidleines_website.png` (Fluent 2 website screenshot)
+- `FigmaCompLibrary_01.png` (Figma component library screenshot)
+- `SpecTemplate_v2 1.png` (motion token spec template, improved version)
+
+Unused assets still in `public/` (not committed): SpecTemplate_v2.png, v3.png, v4.png
+
+---
+
+## In Progress: Case Study #2 (Demo Reel)
+
+**Concept:** A short demo reel compiling animated artifacts from years of work at Microsoft. Loaders, emoji bursts, motion graphics, product animations, etc.
+
+**Status:** Planning. ffmpeg installed. Traver selecting clips and sourcing music.
+
+**Artifact source:** `/Users/traverphillips/Dropbox/!PORTFOLIO_2025/Presentation2025_Artifacts/!Videos/`
+- Converted all qtrle .mov files to .mp4 for playback (originals preserved)
+- Key loader candidates: MCS, Power BI Template, Power Pages, Virtual Agent, Scan Documents, Talent, Sophia, PA Emoji Burst
+
+**Next steps:**
+1. Traver picks video clips and provides music track
+2. Use ffmpeg to trim clips (2-4 sec each) and stitch into reel
+3. Write short case study copy (let the reel do the talking)
+4. Add as second case study on /work
 
 ---
 
@@ -59,28 +60,24 @@
 
 **Structure:**
 - Next.js 16 App Router, static export (output: "export")
-- Markdown content in `content/{work,projects,experiments,blog}/`
-- Parsed via `lib/content.ts` (work/projects/experiments) and `lib/blog.ts` (blog)
-- Rendered via `Prose` component with react-markdown + remark-gfm + rehype-raw
+- Markdown content in `content/work/`
+- Parsed via `lib/content.ts`, rendered via `Prose` component (react-markdown + remark-gfm + rehype-raw)
 
 **Critical Files:**
-- `app/layout.tsx` — site metadata, Nav, Footer
-- `app/work/page.tsx` — Work listing
-- `app/work/[slug]/page.tsx` — Work detail (renders hero + prose)
-- `components/layout/Nav.tsx` — Navigation (currently: Work, About)
-- `content/work/*.md` — Case study content
+- `app/layout.tsx` - site metadata, Nav, Footer
+- `app/work/page.tsx` - Work listing
+- `app/work/[slug]/page.tsx` - Work detail (renders hero + prose)
+- `components/layout/Nav.tsx` - Navigation (Work, About)
+- `components/ui/ProjectCard.tsx` - Card with thumbnail/heroVideo support
+- `lib/content.ts` - Markdown parser (extracts heroVideo, thumbnail from frontmatter)
+- `content/work/*.md` - Case study content
 
-**Identity (Phase 1 — DONE):**
-- Name: Traver Phillips
-- Email: traver4@gmail.com
-- Location: Seattle, WA
-- Domain placeholder: https://traverphillips.com
-- Footer socials: Empty (user skipped)
+**Project type fields:** slug, title, description, category, year, span, tags, heroVideo, thumbnail
 
 ---
 
 ## Notes
 
-- Build passes, site renders correctly at `/work` and `/work/[slug]`
-- Static export constraint: all dynamic routes must have `generateStaticParams()`
-- Video player works with native HTML5 controls, 16:9 aspect ratio maintained
+- Build passes, site renders at `/work` and `/work/[slug]`
+- Static export: all dynamic routes need `generateStaticParams()`
+- Video: native HTML5 controls, 16:9 aspect ratio, object-fit: cover
