@@ -23,7 +23,7 @@ export function Nav() {
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link href="/" className={styles.logo}>
-          JT DiMartile
+          Traver Phillips
         </Link>
 
         <ul className={styles.links}>

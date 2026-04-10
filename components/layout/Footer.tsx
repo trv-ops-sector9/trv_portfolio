@@ -1,12 +1,7 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
-const socials = [
-  { label: "Instagram",  href: "https://instagram.com/vmedium" },
-  { label: "Twitter",    href: "https://twitter.com/vmedium" },
-  { label: "GitHub",     href: "https://github.com/vmedium" },
-  { label: "LinkedIn",   href: "https://linkedin.com/in/vmedium" },
-];
+const socials: { label: string; href: string }[] = [];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -15,7 +10,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`${styles.inner} container`}>
         <span className={styles.copy}>
-          © {year} JT DiMartile
+          © {year} Traver Phillips
         </span>
 
         <ul className={styles.socials}>

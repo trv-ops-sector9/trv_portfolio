@@ -6,16 +6,16 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "JT DiMartile",
-    template: "%s — JT DiMartile",
+    default: "Traver Phillips",
+    template: "%s — Traver Phillips",
   },
-  description: "Product designer. Work, projects, experiments, and writing.",
-  metadataBase: new URL("https://vmedium.xyz"),
+  description: "Senior product designer specializing in design systems and interaction detail that makes technology feel trustworthy and legible.",
+  metadataBase: new URL("https://traverphillips.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vmedium.xyz",
-    siteName: "JT DiMartile",
+    url: "https://traverphillips.com",
+    siteName: "Traver Phillips",
   },
 };
 

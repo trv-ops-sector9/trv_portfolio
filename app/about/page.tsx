@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "JT DiMartile — product designer, musician, and visual artist.",
+  description: "Traver Phillips — senior product designer specializing in design systems and interaction detail.",
 };
 
 export default function AboutPage() {
@@ -16,33 +16,33 @@ export default function AboutPage() {
           <div className={styles.bio}>
             <header className={styles.header}>
               <span className={styles.label}>About</span>
-              <h1 className={styles.name}>JT DiMartile</h1>
+              <h1 className={styles.name}>Traver Phillips</h1>
             </header>
 
             <div className={styles.body}>
               <p>
-                Product designer working at the intersection of systems thinking,
-                typography, and interaction. I design software used by hundreds of
-                thousands of people, and make music and visual art when I&apos;m not.
+                Senior product designer with 12+ years of experience shipping
+                complex digital products, most recently at Microsoft. I specialize
+                in design systems and the interaction detail that makes technology
+                feel trustworthy and legible.
               </p>
               <p>
-                I care about the grid, the gap, and what happens in between.
-                My work tends toward the systematic — I believe good design is
-                mostly invisible and only occasionally beautiful.
+                My work tends toward the systematic — I believe the gap between
+                a good product and a great one lives in the details most people
+                never consciously notice.
               </p>
               <p>
-                Currently available for select projects. Particularly interested in
-                early-stage product work, design systems, and things that don&apos;t
-                exist yet.
+                Looking for a remote-first role where I can own meaningful problems
+                at the intersection of humans and emerging tech.
               </p>
             </div>
 
             <div className={styles.contact}>
               <a
-                href="mailto:hello@vmedium.xyz"
+                href="mailto:traver4@gmail.com"
                 className={styles.contactLink}
               >
-                hello@vmedium.xyz
+                traver4@gmail.com
               </a>
             </div>
           </div>
@@ -54,38 +54,14 @@ export default function AboutPage() {
                 <dt className={styles.infoLabel}>Discipline</dt>
                 <dd>Product Design</dd>
                 <dd>Design Systems</dd>
+                <dd>Interaction Design</dd>
                 <dd>UX Research</dd>
-                <dd>Visual Art</dd>
-                <dd>Music</dd>
+                <dd>Emerging Tech</dd>
               </div>
 
               <div className={styles.infoGroup}>
                 <dt className={styles.infoLabel}>Currently</dt>
-                <dd>New York, NY</dd>
-              </div>
-
-              <div className={styles.infoGroup}>
-                <dt className={styles.infoLabel}>Links</dt>
-                <dd>
-                  <a href="https://instagram.com/vmedium" target="_blank" rel="noopener noreferrer">
-                    Instagram
-                  </a>
-                </dd>
-                <dd>
-                  <a href="https://twitter.com/vmedium" target="_blank" rel="noopener noreferrer">
-                    Twitter / X
-                  </a>
-                </dd>
-                <dd>
-                  <a href="https://github.com/vmedium" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                  </a>
-                </dd>
-                <dd>
-                  <a href="https://linkedin.com/in/vmedium" target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                  </a>
-                </dd>
+                <dd>Seattle, WA</dd>
               </div>
             </dl>
           </aside>
