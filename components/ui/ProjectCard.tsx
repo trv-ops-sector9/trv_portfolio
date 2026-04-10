@@ -12,6 +12,8 @@ export interface Project {
   section: "work" | "projects" | "experiments";
   span?: ProjectSpan;
   tags?: string[];
+  heroVideo?: string;
+  thumbnail?: string;
 }
 
 interface ProjectCardProps {
@@ -30,9 +32,18 @@ export function ProjectCard({ project, span = 4, priority }: ProjectCardProps) {
       data-span={span}
       style={{ "--card-span": span } as React.CSSProperties}
     >
-      {/* Placeholder image */}
+      {/* Card image */}
       <div className={styles.image} aria-hidden="true">
-        <span className={styles.imagePlaceholder} />
+        {project.thumbnail ? (
+          <img
+            src={project.thumbnail}
+            alt=""
+            className={styles.thumbnailImg}
+            loading={priority ? "eager" : "lazy"}
+          />
+        ) : (
+          <span className={styles.imagePlaceholder} />
+        )}
       </div>
 
       {/* Content */}

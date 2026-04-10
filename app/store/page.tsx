@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Store",
-  description: "Prints, objects, and releases — coming soon.",
+  description: "Prints, objects, and releases. Coming soon.",
 };
 
 export default function StorePage() {

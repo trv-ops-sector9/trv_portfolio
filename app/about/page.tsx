@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Traver Phillips — senior product designer specializing in design systems and interaction detail.",
+  description: "Traver Phillips, senior product designer specializing in design systems and interaction detail.",
 };
 
 export default function AboutPage() {
@@ -27,7 +27,7 @@ export default function AboutPage() {
                 feel trustworthy and legible.
               </p>
               <p>
-                My work tends toward the systematic — I believe the gap between
+                My work tends toward the systematic. I believe the gap between
                 a good product and a great one lives in the details most people
                 never consciously notice.
               </p>

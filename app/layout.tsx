@@ -7,7 +7,7 @@ import "@/styles/globals.css";
 export const metadata: Metadata = {
   title: {
     default: "Traver Phillips",
-    template: "%s — Traver Phillips",
+    template: "%s | Traver Phillips",
   },
   description: "Senior product designer specializing in design systems and interaction detail that makes technology feel trustworthy and legible.",
   metadataBase: new URL("https://traverphillips.com"),

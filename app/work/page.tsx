@@ -6,7 +6,7 @@ import styles from "../section.module.css";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Client projects — product design, UX, brand, and research.",
+  description: "Client projects. Product design, UX, brand, and research.",
 };
 
 export default function WorkPage() {

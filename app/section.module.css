@@ -5,3 +5,9 @@
 .grid {
   padding-block-start: var(--space-5);
 }
+
+.comingSoon {
+  margin-block-start: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-subtle);
+}
