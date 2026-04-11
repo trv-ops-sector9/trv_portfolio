@@ -42,24 +42,29 @@ Unused assets still in `public/` (not committed): SpecTemplate_v2.png, v3.png, v
 
 **Concept:** A short demo reel compiling animated artifacts from years of work at Microsoft. Loaders, emoji bursts, motion graphics, product animations, etc.
 
-**Status:** Music locked. Clip selection next.
+**Status:** Clip list finalized. Awaiting `in` timestamps from Traver, then ffmpeg assembly.
 
 **Artifact source:** `/Users/traverphillips/Dropbox/!PORTFOLIO_2025/Presentation2025_Artifacts/!Videos/`
-- Converted all qtrle .mov files to .mp4 for playback (originals preserved)
-- `FluentForDevelopersReel.mov` converted to .mp4 this session
-- `Sophia_Sizzle_Raw.mov` converted to .mp4, browser chrome cropped out (crop=3264:1836:400:232, scaled to 1920x1080)
-- Key loader candidates: MCS, Power BI Template, Power Pages, Virtual Agent, Scan Documents, Talent, Sophia, PA Emoji Burst
+- `!ReelPicks/` — 27 clips (17 P1, 10 P2), matched to CSV
+- `!SecondPicks/` — removed/deprioritized clips
+- `reel_cuts.csv` — clip list with priorities, bar sequences, in timestamps (fill in `in` column)
 
-**Music:** `public/MAdvillan_reelsong_cut.mp3`
+**Clip plan:**
+- 17 P1 clips, each gets 2 cuts: 0.5 bar (1.20s) + 1 bar (2.39s) = 1.5 bars each
+- Exception: Sophia_BG_Ripple gets only 0.5 bar (trimmed to hit 24 bars exactly)
+- Total: 24 bars = 56.86s at 100.4 BPM
+- Output: 30fps, normalize all clips at stitch time
+
+**Music:** `public/MAdvillan_reelsong_cut.aac`
 - Source: Madvillan screen recording via Screenflick (`MAdvillan_reelsong_01.mov`, not committed)
 - Cut: 56.86s, starts at beat drop (~0:11 in source), 24 bars at 100.4 BPM, 4-sec fade out
 - Beat analysis via librosa (installed: `pip3 install librosa`)
 - Cut workflow: snap start/end to bar boundaries using librosa beat_track, cut with ffmpeg from .mov directly (not .aac, seek is broken on ADTS)
 
 **Next steps:**
-1. Traver picks video clips from Dropbox artifacts folder (folder path TBD)
-2. Use ffmpeg to trim clips to bar-length chunks, beat-sync cuts to music
-3. Stitch into reel with music underneath
+1. Traver fills in `in` timestamps in reel_cuts.csv
+2. Build ffmpeg commands to trim each clip to bar length
+3. Stitch into reel at 30fps with music bed
 4. Write short case study copy (let the reel do the talking)
 5. Add as second case study on /work
 
