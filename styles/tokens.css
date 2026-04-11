@@ -9,20 +9,19 @@
 
 :root {
   /* ─── Typography ──────────────────────────────────────────────────────── */
-  /* Golden ratio scale: each step = previous × 1.618 */
-  --text-2xs:   0.382rem;   /*  6.1px */
-  --text-xs:    0.618rem;   /*  9.9px */
-  --text-sm:    0.764rem;   /* 12.2px */
-  --text-base:  1rem;       /* 16px   — body copy anchor */
-  --text-md:    1.618rem;   /* 25.9px */
-  --text-lg:    2.618rem;   /* 41.9px */
-  --text-xl:    4.236rem;   /* 67.8px */
-  --text-2xl:   6.854rem;   /* 109.7px */
-  --text-3xl:   11.089rem;  /* 177.4px */
+  --text-2xs:   0.625rem;   /* 10px  — fine print */
+  --text-xs:    0.75rem;    /* 12px  — labels, tags, captions */
+  --text-sm:    0.875rem;   /* 14px  — card descriptions, secondary UI */
+  --text-base:  1rem;       /* 16px  — body copy anchor */
+  --text-md:    1.5rem;     /* 24px  — card titles, subheadings */
+  --text-lg:    2.25rem;    /* 36px  — section headings */
+  --text-xl:    3.5rem;     /* 56px  — page titles */
+  --text-2xl:   5.5rem;     /* 88px  — display */
+  --text-3xl:   8.5rem;     /* 136px — hero display */
 
-  /* Font families — system stack, SF Pro on macOS */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji";
+  /* Font families — DM Sans (loaded via next/font) with system fallbacks */
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Fira Code",
     Consolas, monospace;
 
@@ -33,9 +32,9 @@
 
   /* Line heights */
   --leading-tight:   1.1;
-  --leading-snug:    1.3;
-  --leading-normal:  1.5;
-  --leading-relaxed: 1.7;
+  --leading-snug:    1.25;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.75;
 
   /* Letter spacing */
   --tracking-tight:  -0.03em;
