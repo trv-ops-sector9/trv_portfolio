@@ -3,7 +3,7 @@ title: "Fluent 2 Motion Guidelines"
 description: "Shifting motion from an afterthought to a system. Guidelines, tokens, and Figma library for Fluent 2."
 category: "Design Systems"
 year: 2024
-span: 3
+span: 12
 tags: ["Fluent 2", "Motion", "Design Systems"]
 heroVideo: "/fluent-2-motion-hero.mp4"
 thumbnail: "/fluent-2-motion-thumb.png"

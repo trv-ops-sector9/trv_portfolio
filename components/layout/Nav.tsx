@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "@/components/ui/ThemeProvider";
 import styles from "./Nav.module.css";
 
 const links = [
@@ -12,9 +11,6 @@ const links = [
 
 export function Nav() {
   const pathname = usePathname();
-  const { resolvedTheme, setTheme } = useTheme();
-
-  const toggle = () => setTheme(resolvedTheme === "dark" ? "light" : "dark");
 
   return (
     <header className={styles.header}>
@@ -35,14 +31,6 @@ export function Nav() {
             </li>
           ))}
         </ul>
-
-        <button
-          className={styles.modeToggle}
-          onClick={toggle}
-          aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
-        >
-          {resolvedTheme === "dark" ? "Light" : "Dark"}
-        </button>
       </nav>
     </header>
   );

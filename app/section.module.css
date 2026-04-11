@@ -1,9 +1,9 @@
 .section {
-  padding-block-end: var(--space-6);
+  padding-block-end: var(--space-8);
 }
 
 .grid {
-  padding-block-start: var(--space-5);
+  padding-block-start: var(--space-7);
 }
 
 .comingSoon {

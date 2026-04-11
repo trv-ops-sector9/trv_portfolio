@@ -62,13 +62,6 @@ export function ProjectCard({ project, span = 4, priority }: ProjectCardProps) {
           </ul>
         )}
       </div>
-
-      {/* Grid reveal lines — visible on hover */}
-      <div className={styles.gridOverlay} aria-hidden="true">
-        {Array.from({ length: span - 1 }).map((_, i) => (
-          <div key={i} className={styles.gridLine} />
-        ))}
-      </div>
     </Link>
   );
 }
