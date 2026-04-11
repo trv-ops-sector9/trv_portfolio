@@ -100,7 +100,7 @@
 
 /* ─── Body prose ───────────────────────────────────────────────────────── */
 .body {
-  max-width: 65ch;
+  max-width: none;
 }
 
 .placeholder {
