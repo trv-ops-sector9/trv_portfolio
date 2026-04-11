@@ -18,7 +18,6 @@ export default function WorkPage() {
         <SectionHeader
           label="Work"
           title="Client Projects"
-          description="Product design, UX research, brand identity, and design systems for companies across fintech, climate, and consumer software."
           count={projects.length}
         />
         <div className={styles.grid}>

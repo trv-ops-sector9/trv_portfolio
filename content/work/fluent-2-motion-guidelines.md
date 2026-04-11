@@ -1,6 +1,6 @@
 ---
 title: "Fluent 2 Motion Guidelines"
-description: "Shifting motion from an afterthought to a system. Guidelines, tokens, and Figma library for Fluent 2."
+description: "Bridging design and engineering for motion in Fluent 2. A shared system, tools designers could use, and education that made motion part of the conversation from the start."
 category: "Design Systems"
 year: 2024
 span: 12
@@ -9,19 +9,15 @@ heroVideo: "/fluent-2-motion-hero.mp4"
 thumbnail: "/fluent-2-motion-thumb.png"
 ---
 
-Motion was everywhere in Fluent 2, but it had no principles. Teams were shipping inconsistent transitions, durations that felt wrong, and motion choices that weren't grounded in anything. It was treated like polish, something you tack on at the end if there's time.
-
-I led the motion design work at Microsoft to change that. Worked with **Chris Lorance** (senior motion designer) to build the system, and **Andrew Falk** overseeing to keep it aligned with the bigger picture. I owned about 80% of the work: the documentation, the thinking, the specifications.
-
-## What We Built
+## What I Built
 
 <div class="work-section">
 <div class="work-section-media">
 <img src="/FLuent2_Motinguidleines_website.png" alt="Fluent 2 Motion Guidelines, live on fluent2.microsoft.design" />
 </div>
 <div class="work-section-body">
-<h3>Public guidelines</h3>
-<p>On <a href="https://fluent2.microsoft.design/motion">fluent2.microsoft.design/motion</a>. The page opens with four motion principles (functional, natural, consistent, appealing) each with video examples showing what they mean in practice. Below that, duration and easing specs with curves and timing values. Then transition types broken out by context: enter/exit for components, elevation changes for layered surfaces, top-level navigation, and container transforms. Choreography covers sequencing and stagger timing for complex multi-element surfaces. The page closes with accessible motion design. Reduced motion preferences, vestibular sensitivity, and how to handle both without gutting the experience.</p>
+<h3>Public motion guidelines</h3>
+<p>I led this with Chris Lorance and Andrew Falk. On <a href="https://fluent2.microsoft.design/motion">fluent2.microsoft.design/motion</a>. The page opens with four motion principles (functional, natural, consistent, appealing) each with video examples showing what they mean in practice. Below that, duration and easing specs with curves and timing values. Then transition types broken out by context: enter/exit for components, elevation changes for layered surfaces, top-level navigation, and container transforms. Choreography covers sequencing and stagger timing for complex multi-element surfaces. The page closes with accessible motion design. Reduced motion preferences, vestibular sensitivity, and how to handle both without gutting the experience.</p>
 </div>
 </div>
 

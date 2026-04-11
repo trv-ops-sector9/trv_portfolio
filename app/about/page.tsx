@@ -21,19 +21,15 @@ export default function AboutPage() {
 
             <div className={styles.body}>
               <p>
-                Senior product designer with 12+ years of experience shipping
-                complex digital products, most recently at Microsoft. I specialize
-                in design systems and the interaction detail that makes technology
-                feel trustworthy and legible.
+                Product and interaction designer. Twelve years shipping complex
+                digital products, mostly at Microsoft. Motion design is where
+                I go deeper than most.
               </p>
               <p>
-                My work tends toward the systematic. I believe the gap between
-                a good product and a great one lives in the details most people
-                never consciously notice.
-              </p>
-              <p>
-                Looking for a remote-first role where I can own meaningful problems
-                at the intersection of humans and emerging tech.
+                I work best at the intersection of design and engineering.
+                Finding the gap between the two and building something that
+                bridges it. The motion system for Fluent 2 is a good example
+                of that.
               </p>
             </div>
 
@@ -53,9 +49,9 @@ export default function AboutPage() {
               <div className={styles.infoGroup}>
                 <dt className={styles.infoLabel}>Discipline</dt>
                 <dd>Product Design</dd>
-                <dd>Design Systems</dd>
                 <dd>Interaction Design</dd>
-                <dd>UX Research</dd>
+                <dd>Motion Design</dd>
+                <dd>Design Systems</dd>
                 <dd>Emerging Tech</dd>
               </div>
 
