@@ -19,16 +19,16 @@
   --text-2xl:   5.5rem;     /* 88px  — display */
   --text-3xl:   8.5rem;     /* 136px — hero display */
 
-  /* Font families — DM Sans (loaded via next/font) with system fallbacks */
-  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont,
+  /* Font families — Inter (loaded via next/font) with system fallbacks */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Fira Code",
     Consolas, monospace;
 
   /* Font weights */
+  --font-weight-light:   300;
   --font-weight-regular: 400;
   --font-weight-medium:  500;
-  --font-weight-bold:    700;
 
   /* Line heights */
   --leading-tight:   1.1;
