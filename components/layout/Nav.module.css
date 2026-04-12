@@ -51,6 +51,23 @@
   color: var(--color-text);
 }
 
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-base);
+  color: var(--color-text-subtle);
+  transition: color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+}
+
+.themeToggle:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-muted);
+}
+
 
 @media (max-width: 768px) {
   .links {
@@ -62,8 +79,3 @@
   }
 }
 
-@media (max-width: 560px) {
-  .links {
-    display: none;
-  }
-}

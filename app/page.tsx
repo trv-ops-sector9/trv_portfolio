@@ -1,5 +1,6 @@
 import { getProjects } from "@/lib/content";
 import { ProjectGrid } from "@/components/ui/ProjectGrid";
+import { FadeUp } from "@/components/ui/FadeUp";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -7,8 +8,10 @@ export default function HomePage() {
 
   return (
     <div className={styles.page}>
-      <div className={`${styles.gridRule} container`}>
-        <ProjectGrid projects={projects} layout="modular" />
+      <div className="container">
+        <FadeUp>
+          <ProjectGrid projects={projects} layout="modular" />
+        </FadeUp>
       </div>
     </div>
   );

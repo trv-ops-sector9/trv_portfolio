@@ -42,31 +42,33 @@ Unused assets still in `public/` (not committed): SpecTemplate_v2.png, v3.png, v
 
 **Concept:** A short demo reel compiling animated artifacts from years of work at Microsoft. Loaders, emoji bursts, motion graphics, product animations, etc.
 
-**Status:** Clip list finalized. Awaiting `in` timestamps from Traver, then ffmpeg assembly.
+**Status:** Traver is assembling the reel manually in After Effects.
 
 **Artifact source:** `/Users/traverphillips/Dropbox/!PORTFOLIO_2025/Presentation2025_Artifacts/!Videos/`
-- `!ReelPicks/` — 27 clips (17 P1, 10 P2), matched to CSV
-- `!SecondPicks/` — removed/deprioritized clips
-- `reel_cuts.csv` — clip list with priorities, bar sequences, in timestamps (fill in `in` column)
+- `!ReelPicks/` — final clip picks (do not touch)
+- `Reel cuts - Revised.csv` — finalized clip list with in timestamps, bar lengths, priorities
 
-**Clip plan:**
-- 17 P1 clips, each gets 2 cuts: 0.5 bar (1.20s) + 1 bar (2.39s) = 1.5 bars each
-- Exception: Sophia_BG_Ripple gets only 0.5 bar (trimmed to hit 24 bars exactly)
+**Revised clip plan (from CSV):**
+- 10 two-cut P1 clips (0.5 bar + 1 bar each = 1.5 bars)
+- 5 single-cut P1 clips (1 bar or 0.5 bar)
+- 5 P2 clips (1 bar each)
 - Total: 24 bars = 56.86s at 100.4 BPM
-- Output: 30fps, normalize all clips at stitch time
+- Bar lengths: 0.5 bar = 1.1952s, 1 bar = 2.3904s
 
-**Music:** `public/MAdvillan_reelsong_cut.aac`
-- Source: Madvillan screen recording via Screenflick (`MAdvillan_reelsong_01.mov`, not committed)
-- Cut: 56.86s, starts at beat drop (~0:11 in source), 24 bars at 100.4 BPM, 4-sec fade out
-- Beat analysis via librosa (installed: `pip3 install librosa`)
-- Cut workflow: snap start/end to bar boundaries using librosa beat_track, cut with ffmpeg from .mov directly (not .aac, seek is broken on ADTS)
+**Music:** `public/MAdvillan_reelsong_cut.mp3` (use this, not the .aac — ADTS seek is broken)
+- 56.86s, 24 bars at 100.4 BPM, 4-sec fade out
+- Beat offset: 0.5573s from start
+- librosa installed: `pip3 install librosa`
+
+**Beat/bar data (100.4 BPM, offset 0.5573s):**
+- Beat interval: 0.597610s
+- Bar interval: 2.390438s
+- 95 beats, 24 bars across 56.86s
 
 **Next steps:**
-1. Traver fills in `in` timestamps in reel_cuts.csv
-2. Build ffmpeg commands to trim each clip to bar length
-3. Stitch into reel at 30fps with music bed
-4. Write short case study copy (let the reel do the talking)
-5. Add as second case study on /work
+1. Traver finishes AE edit and exports reel
+2. Write short case study copy (let the reel do the talking)
+3. Add as second case study on /work
 
 ---
 

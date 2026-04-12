@@ -30,6 +30,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         theme === "system" ? (mq.matches ? "dark" : "light") : theme;
       setResolvedTheme(resolved);
       root.setAttribute("data-theme", resolved);
+      root.style.colorScheme = resolved;
     };
 
     apply();

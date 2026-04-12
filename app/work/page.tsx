@@ -1,29 +1,5 @@
-import type { Metadata } from "next";
-import { getProjects } from "@/lib/content";
-import { ProjectGrid } from "@/components/ui/ProjectGrid";
-import { SectionHeader } from "@/components/layout/SectionHeader";
-import styles from "../section.module.css";
-
-export const metadata: Metadata = {
-  title: "Work",
-  description: "Client projects. Product design, UX, brand, and research.",
-};
+import { redirect } from "next/navigation";
 
 export default function WorkPage() {
-  const projects = getProjects("work");
-
-  return (
-    <div className={styles.section}>
-      <div className="container">
-        <SectionHeader
-          label="Work"
-          title="Client Projects"
-          count={projects.length}
-        />
-        <div className={styles.grid}>
-          <ProjectGrid projects={projects} layout="modular" />
-        </div>
-      </div>
-    </div>
-  );
+  redirect("/");
 }

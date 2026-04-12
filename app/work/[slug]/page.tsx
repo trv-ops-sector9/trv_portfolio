@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getProject, getProjects } from "@/lib/content";
 import { Prose } from "@/components/ui/Prose";
+import { FadeUp } from "@/components/ui/FadeUp";
 import styles from "./page.module.css";
 
 interface Props {
@@ -30,40 +30,32 @@ export default async function WorkProjectPage({ params }: Props) {
   return (
     <article className={styles.article}>
       <div className="container">
-        <nav className={styles.breadcrumb}>
-          <Link href="/work">Work</Link>
-          <span aria-hidden="true">/</span>
-          <span>{project.title}</span>
-        </nav>
-
-        <header className={styles.header}>
-          <div className={styles.meta}>
-            <span className={styles.category}>{project.category}</span>
-            <span className={styles.year}>{project.year}</span>
-          </div>
-          <h1 className={styles.title}>{project.title}</h1>
-          <p className={styles.description}>{project.description}</p>
-          {project.tags && project.tags.length > 0 && (
-            <ul className={styles.tags}>
-              {project.tags.map((tag) => (
-                <li key={tag} className={styles.tag}>{tag}</li>
-              ))}
-            </ul>
-          )}
-        </header>
+        <FadeUp>
+          <header className={styles.header}>
+            <div className={styles.meta}>
+              <span className={styles.category}>{project.category}</span>
+              <span className={styles.year}>{project.year}</span>
+            </div>
+            <h1 className={styles.title}>{project.title}</h1>
+          </header>
+        </FadeUp>
 
         {/* Hero section */}
-        <div className={styles.hero} aria-hidden="true">
-          {project.heroVideo ? (
-            <video width="100%" height="100%" controls>
-              <source src={project.heroVideo} type="video/mp4" />
-            </video>
-          ) : null}
-        </div>
+        <FadeUp delay={0.1}>
+          <div className={styles.hero} aria-hidden="true">
+            {project.heroVideo ? (
+              <video width="100%" height="100%" autoPlay muted loop playsInline>
+                <source src={project.heroVideo} type="video/mp4" />
+              </video>
+            ) : null}
+          </div>
+        </FadeUp>
 
-        <div className={styles.body}>
-          <Prose content={content} />
-        </div>
+        <FadeUp delay={0.18}>
+          <div className={styles.body}>
+            <Prose content={content} />
+          </div>
+        </FadeUp>
       </div>
     </article>
   );

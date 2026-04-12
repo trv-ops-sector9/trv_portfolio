@@ -53,14 +53,6 @@ export function ProjectCard({ project, span = 4, priority }: ProjectCardProps) {
           <span className={styles.year}>{project.year}</span>
         </div>
         <h2 className={styles.title}>{project.title}</h2>
-        <p className={styles.description}>{project.description}</p>
-        {project.tags && (
-          <ul className={styles.tags}>
-            {project.tags.map((tag) => (
-              <li key={tag} className={styles.tag}>{tag}</li>
-            ))}
-          </ul>
-        )}
       </div>
     </Link>
   );

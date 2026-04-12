@@ -12,6 +12,8 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  color-scheme: light;
 }
 
 body {
@@ -68,18 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-bg);
 }
 
-/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-border-strong);
-  border-radius: var(--radius-full);
-}
+/* ─── Scrollbar — native theming via color-scheme ────────────────────────── */
 
 /* ─── Layout utilities ───────────────────────────────────────────────────── */
 .container {
