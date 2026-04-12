@@ -25,7 +25,7 @@ export default async function WorkProjectPage({ params }: Props) {
   const result = getProject("work", slug);
   if (!result) notFound();
 
-  const { project, content } = result;
+  const { project, content, lede } = result;
 
   return (
     <article className={styles.article}>
@@ -37,6 +37,7 @@ export default async function WorkProjectPage({ params }: Props) {
               <span className={styles.year}>{project.year}</span>
             </div>
             <h1 className={styles.title}>{project.title}</h1>
+            {lede && <p className={styles.lede}>{lede}</p>}
           </header>
         </FadeUp>
 

@@ -45,7 +45,7 @@ export function getProjects(
 export function getProject(
   section: Project["section"],
   slug: string
-): { project: Project; content: string } | null {
+): { project: Project; content: string; lede?: string } | null {
   const dir = path.join(CONTENT_ROOT, section);
   const candidates = [`${slug}.md`, `${slug}.mdx`];
 
@@ -68,6 +68,7 @@ export function getProject(
           thumbnail: data.thumbnail,
         },
         content,
+        lede: data.lede,
       };
     }
   }

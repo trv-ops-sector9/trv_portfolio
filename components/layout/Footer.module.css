@@ -22,14 +22,14 @@
   gap: var(--space-4);
 }
 
-.socialLink {
+.contact {
   font-size: var(--text-xs);
   color: var(--color-text-subtle);
   letter-spacing: var(--tracking-wide);
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.socialLink:hover {
+.contact:hover {
   color: var(--color-text);
 }
 

@@ -13,20 +13,9 @@ export function Footer() {
           © {year} Traver Phillips
         </span>
 
-        <ul className={styles.socials}>
-          {socials.map(({ label, href }) => (
-            <li key={label}>
-              <Link
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <a href="mailto:traver4@gmail.com" className={styles.contact}>
+          traver4@gmail.com
+        </a>
       </div>
     </footer>
   );

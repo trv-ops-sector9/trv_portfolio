@@ -15,7 +15,7 @@ export default function AboutPage() {
           {/* Bio column */}
           <div className={styles.bio}>
             <header className={styles.header}>
-              <span className={styles.label}>About</span>
+              <span className={styles.label}>Motion + Product Design</span>
               <h1 className={styles.name}>Traver Phillips</h1>
             </header>
 

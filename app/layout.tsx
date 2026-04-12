@@ -33,10 +33,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');var d=t||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',d);document.documentElement.style.colorScheme=d;})();` }} />
+      </head>
       <body>
         <ThemeProvider>
           <Nav />
-          <main style={{ paddingBlockStart: "48px", minHeight: "100dvh" }}>
+          <main style={{ paddingBlockStart: "var(--nav-height)", minHeight: "100dvh" }}>
             {children}
           </main>
           <Footer />

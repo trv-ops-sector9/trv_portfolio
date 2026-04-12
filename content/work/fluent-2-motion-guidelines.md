@@ -7,9 +7,8 @@ span: 12
 tags: ["Fluent 2", "Motion", "Design Systems"]
 heroVideo: "/fluent-2-motion-hero.mp4"
 thumbnail: "/fluent-2-motion-thumb.png"
+lede: "As motion design lead for BIC, Microsoft's business applications org, designing custom motion product by product wasn't scaling across Fluent 2. Specs existed but lived on the engineering side. Designers couldn't read them, contribute to them, or build from them. The answer was a shared system: public guidelines, motion token specs, and a Figma library teams could actually use."
 ---
-
-## What I Built
 
 <div class="work-section">
 <div class="work-section-media">
@@ -17,7 +16,7 @@ thumbnail: "/fluent-2-motion-thumb.png"
 </div>
 <div class="work-section-body">
 <h3>Public motion guidelines</h3>
-<p>I led this with Chris Lorance and Andrew Falk. On <a href="https://fluent2.microsoft.design/motion">fluent2.microsoft.design/motion</a>. The page opens with four motion principles (functional, natural, consistent, appealing) each with video examples showing what they mean in practice. Below that, duration and easing specs with curves and timing values. Then transition types broken out by context: enter/exit for components, elevation changes for layered surfaces, top-level navigation, and container transforms. Choreography covers sequencing and stagger timing for complex multi-element surfaces. The page closes with accessible motion design. Reduced motion preferences, vestibular sensitivity, and how to handle both without gutting the experience.</p>
+<p>Led with Chris Lorance and Andrew Falk, published on <a href="https://fluent2.microsoft.design/motion">fluent2.microsoft.design/motion</a>. The page opens with four motion principles (functional, natural, consistent, appealing) each with video examples grounding them in real product behavior. From there: duration and easing specs with curves and timing values, transition types broken out by context (enter/exit, elevation changes, navigation, container transforms), choreography guidance for multi-element surfaces, and a closing section on accessible motion covering reduced motion preferences and vestibular sensitivity.</p>
 </div>
 </div>
 
@@ -27,7 +26,7 @@ thumbnail: "/fluent-2-motion-thumb.png"
 </div>
 <div class="work-section-body">
 <h3>Motion token specifications</h3>
-<p>Let teams define motion once and use it everywhere. Duration, easing, direction, timing, structured so it flows from AE into code. I iterated on the spec template across multiple versions. The final one pushed further than what was adopted, with component anatomy, interactive demos, and full timeline visualizations mapping easing curves and sequencing for each transition state. The central design team at Microsoft picked this up and uses it across their systems now.</p>
+<p>A spec framework that lets teams define motion once and use it everywhere. Duration, easing, direction, and timing structured to flow from After Effects into code. I iterated across multiple versions; the final spec pushed further than what was adopted, with component anatomy, interactive demos, and timeline visualizations mapping easing curves and sequencing for each transition state. Microsoft's central design team picked it up and uses it across their systems.</p>
 </div>
 </div>
 
@@ -37,14 +36,12 @@ thumbnail: "/fluent-2-motion-thumb.png"
 </div>
 <div class="work-section-body">
 <h3>Figma interactive library</h3>
-<p>Showing the guidelines in context. The existing Figma components were a mess, so I rebuilt them from scratch. Clean, accurate, actually matching the specs. Real components moving the way they should, so teams could drop them into their Figma demos and validate against the system instead of guessing.</p>
+<p>The existing Fluent 2 motion components didn't match the specs, so I rebuilt them from scratch. Real components moving the way they should, accurate to the system, so teams could validate in context rather than approximate.</p>
 </div>
 </div>
 
-## The Outcome
+#### Outcome
 
-The work wasn't about making motion flashier. It was about making motion intentional. Before: designers added motion at render time because it looked cool. After: motion is part of the design conversation from the start. Teams reference the guidelines first. People use the vocabulary (choreography, duration, entrance timing) with actual purpose.
+The goal was never to make motion flashier. It was to make it intentional. Before, motion was added at render time because it looked good. After, it enters the design conversation early. Teams reference the guidelines, use the vocabulary with purpose, and know how to ask for what they need. Motion went from invisible to visible. The token spec was adopted by Microsoft's central design team, and the volume of motion design requests I received grew substantially as awareness spread.
 
-It also raised awareness across the org. Motion went from invisible to visible. The number of motion design requests I received increased significantly once teams understood what was possible and how to ask for it. The token spec got adopted by Microsoft's central design team and is used across their systems now.
-
-Consistency. Confidence. Motion that feels like it belongs to the system instead of a one-off flourish.
+<p class="kicker">Motion that belongs to the system, not a one-off flourish.</p>

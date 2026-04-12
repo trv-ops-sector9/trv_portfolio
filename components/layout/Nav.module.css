@@ -6,7 +6,7 @@
   z-index: var(--z-nav);
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  height: 48px;
+  height: var(--nav-height);
   transition: background-color var(--duration-base) var(--ease-out),
               border-color var(--duration-base) var(--ease-out);
 }
