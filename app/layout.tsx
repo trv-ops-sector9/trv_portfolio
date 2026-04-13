@@ -3,6 +3,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import "@/styles/globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -39,6 +40,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+          <ScrollToTop />
           <Nav />
           <main style={{ paddingBlockStart: "var(--nav-height)", minHeight: "100dvh" }}>
             {children}
