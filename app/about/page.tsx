@@ -15,7 +15,7 @@ export default function AboutPage() {
           {/* Bio column */}
           <div className={styles.bio}>
             <header className={styles.header}>
-              <span className={styles.label}>Motion + Product Design</span>
+              <span className={styles.label}>Problem solver. Product designer.</span>
               <h1 className={styles.name}>Traver Phillips</h1>
             </header>
 
@@ -46,7 +46,7 @@ export default function AboutPage() {
               </p>
               <p>
                 In my free time: car builder, fabricator, rally driver,
-                instructor.
+                driving instructor.
               </p>
             </div>
 
