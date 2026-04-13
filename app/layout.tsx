@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { PageTransition } from "@/components/ui/PageTransition";
 import "@/styles/globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -43,7 +44,7 @@ export default function RootLayout({
           <ScrollToTop />
           <Nav />
           <main style={{ paddingBlockStart: "var(--nav-height)", minHeight: "100dvh" }}>
-            {children}
+            <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
         </ThemeProvider>

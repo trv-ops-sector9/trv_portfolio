@@ -9,6 +9,9 @@ export default function HomePage() {
   return (
     <div className={styles.page}>
       <div className="container">
+        <FadeUp>
+          <p className={`label ${styles.sectionLabel}`}>Selected work, 2024–2026</p>
+        </FadeUp>
         <FadeUp delay={0.06}>
           <ProjectGrid projects={projects} />
         </FadeUp>
