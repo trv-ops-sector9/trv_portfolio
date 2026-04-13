@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/content";
 import { Prose } from "@/components/ui/Prose";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { MotiifCarousel } from "@/components/ui/MotiifCarousel";
 import { assetPath } from "@/lib/assetPath";
 import styles from "./page.module.css";
 
@@ -37,15 +38,6 @@ export default async function WorkProjectPage({ params }: Props) {
   return (
     <article className={styles.article}>
 
-      {/* Sticky back bar */}
-      <div className={styles.stickyBar}>
-        <div className="container">
-          <Link href="/work" className={styles.backLink}>
-            ← Work
-          </Link>
-        </div>
-      </div>
-
       <div className="container">
         <FadeUp>
           <header className={styles.header}>
@@ -64,6 +56,12 @@ export default async function WorkProjectPage({ params }: Props) {
               <video width="100%" height="100%" autoPlay muted loop playsInline>
                 <source src={assetPath(project.heroVideo)} type="video/mp4" />
               </video>
+            </div>
+          </FadeUp>
+        ) : project.heroCarousel ? (
+          <FadeUp delay={0.1}>
+            <div className={styles.hero}>
+              <MotiifCarousel />
             </div>
           </FadeUp>
         ) : null}

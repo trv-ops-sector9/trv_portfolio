@@ -14,47 +14,45 @@ export interface Project {
   span?: ProjectSpan;
   tags?: string[];
   heroVideo?: string;
+  heroCarousel?: boolean;
   thumbnail?: string;
 }
 
 interface ProjectCardProps {
   project: Project;
-  span?: ProjectSpan;
+  index: number;
   priority?: boolean;
 }
 
-export function ProjectCard({ project, span = 4, priority }: ProjectCardProps) {
+export function ProjectCard({ project, index, priority }: ProjectCardProps) {
   const href = `/${project.section}/${project.slug}`;
+  const num = String(index).padStart(2, "0");
 
   return (
-    <Link
-      href={href}
-      className={styles.card}
-      data-span={span}
-      style={{ "--card-span": span } as React.CSSProperties}
-    >
-      {/* Card image */}
-      <div className={styles.image} aria-hidden="true">
-        {project.thumbnail ? (
+    <Link href={href} className={styles.card}>
+      <span className={styles.index}>{num}</span>
+
+      <div className={styles.content}>
+        <h2 className={styles.title}>{project.title}</h2>
+        <div className={styles.meta}>
+          <span className={styles.category}>{project.category}</span>
+          <span className={styles.dot} aria-hidden="true">·</span>
+          <span className={styles.year}>{project.year}</span>
+        </div>
+      </div>
+
+      {project.thumbnail ? (
+        <div className={styles.thumb} aria-hidden="true">
           <img
             src={assetPath(project.thumbnail)}
             alt=""
-            className={styles.thumbnailImg}
+            className={styles.thumbImg}
             loading={priority ? "eager" : "lazy"}
           />
-        ) : (
-          <span className={styles.imagePlaceholder} />
-        )}
-      </div>
-
-      {/* Content */}
-      <div className={styles.content}>
-        <div className={styles.meta}>
-          <span className={styles.category}>{project.category}</span>
-          <span className={styles.year}>{project.year}</span>
         </div>
-        <h2 className={styles.title}>{project.title}</h2>
-      </div>
+      ) : (
+        <div className={styles.thumbPlaceholder} aria-hidden="true" />
+      )}
     </Link>
   );
 }

@@ -96,6 +96,8 @@
   --color-accent:        #0f172a;
   --color-accent-hover:  #1e293b;
 
+  --color-amber:         #E09A38;
+
   /* ─── Focus ring ──────────────────────────────────────────────────────── */
   --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-text);
 }
@@ -103,20 +105,20 @@
 /* ─── Dark mode ─────────────────────────────────────────────────────────── */
 [data-theme="dark"] {
   color-scheme: dark;
-  --color-bg:            #0b0f1a;
-  --color-bg-subtle:     #131926;
-  --color-bg-muted:      #1c2436;
-  --color-surface:       #252f45;   /* placeholder image bg */
-  --color-border:        #2a3750;
-  --color-border-strong: #3d5278;
+  --color-bg:            #0d0d11;
+  --color-bg-subtle:     #141418;
+  --color-bg-muted:      #1c1c22;
+  --color-surface:       #242429;   /* placeholder image bg */
+  --color-border:        #29292f;
+  --color-border-strong: #393944;
 
-  --color-text:          #e8edf5;
-  --color-text-muted:    #94afc5;
-  --color-text-subtle:   #5a7a9a;
-  --color-text-inverse:  #0b0f1a;
+  --color-text:          #e9eaed;
+  --color-text-muted:    #9aa2b0;
+  --color-text-subtle:   #636a78;
+  --color-text-inverse:  #0d0d11;
 
-  --color-accent:        #e8edf5;
-  --color-accent-hover:  #b8cedd;
+  --color-accent:        #e9eaed;
+  --color-accent-hover:  #b8bcc8;
 
   --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-text);
 }
@@ -125,20 +127,20 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --color-bg:            #0b0f1a;
-    --color-bg-subtle:     #131926;
-    --color-bg-muted:      #1c2436;
-    --color-surface:       #252f45;
-    --color-border:        #2a3750;
-    --color-border-strong: #3d5278;
+    --color-bg:            #0d0d11;
+    --color-bg-subtle:     #141418;
+    --color-bg-muted:      #1c1c22;
+    --color-surface:       #242429;
+    --color-border:        #29292f;
+    --color-border-strong: #393944;
 
-    --color-text:          #e8edf5;
-    --color-text-muted:    #94afc5;
-    --color-text-subtle:   #5a7a9a;
-    --color-text-inverse:  #0b0f1a;
+    --color-text:          #e9eaed;
+    --color-text-muted:    #9aa2b0;
+    --color-text-subtle:   #636a78;
+    --color-text-inverse:  #0d0d11;
 
-    --color-accent:        #e8edf5;
-    --color-accent-hover:  #b8cedd;
+    --color-accent:        #e9eaed;
+    --color-accent-hover:  #b8bcc8;
 
     --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-text);
   }

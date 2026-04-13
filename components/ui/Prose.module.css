@@ -204,6 +204,27 @@
   line-height: var(--leading-relaxed);
 }
 
+/* ─── Callout — featured section (e.g. Fleet Ops) ───────────────────────── */
+.prose :global(.callout) {
+  border-left: 2px solid var(--color-amber);
+  padding-inline-start: var(--space-5);
+  margin-block: var(--space-7);
+}
+
+.prose :global(.callout-label) {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-amber);
+  font-family: var(--font-sans);
+  margin-block-end: var(--space-3);
+  display: block;
+}
+
+.prose :global(.callout h3) {
+  margin-block-start: 0;
+}
+
 /* ─── Horizontal rule ────────────────────────────────────────────────────── */
 .prose :global(hr) {
   border: none;

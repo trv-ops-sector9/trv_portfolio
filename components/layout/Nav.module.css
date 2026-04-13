@@ -5,10 +5,9 @@
   right: 0;
   z-index: var(--z-nav);
   background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
   height: var(--nav-height);
-  transition: background-color var(--duration-base) var(--ease-out),
-              border-color var(--duration-base) var(--ease-out);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--duration-base) var(--ease-out);
 }
 
 .nav {
@@ -29,7 +28,7 @@
 }
 
 .logo:hover {
-  color: var(--color-text-muted);
+  color: var(--color-amber);
 }
 
 .links {
@@ -51,14 +50,6 @@
   color: var(--color-text);
 }
 
-.linkDisabled {
-  font-size: var(--text-sm);
-  color: var(--color-text-subtle);
-  letter-spacing: var(--tracking-normal);
-  opacity: 0.35;
-  cursor: default;
-  white-space: nowrap;
-}
 
 .themeToggle {
   display: flex;
@@ -66,15 +57,20 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  border-radius: var(--radius-base);
   color: var(--color-text-subtle);
-  transition: color var(--duration-fast) var(--ease-out),
-              background-color var(--duration-fast) var(--ease-out);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.themeToggle svg {
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.themeToggle[data-theme-state="dark"] svg {
+  transform: rotate(180deg);
 }
 
 .themeToggle:hover {
   color: var(--color-text);
-  background-color: var(--color-bg-muted);
 }
 
 

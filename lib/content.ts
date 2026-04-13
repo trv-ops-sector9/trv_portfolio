@@ -25,6 +25,7 @@ function readSection(section: Project["section"]): Project[] {
         span: data.span,
         tags: data.tags ?? [],
         heroVideo: data.heroVideo,
+        heroCarousel: data.heroCarousel ?? false,
         thumbnail: data.thumbnail,
       } satisfies Project;
     })
@@ -65,6 +66,7 @@ export function getProject(
           span: data.span,
           tags: data.tags ?? [],
           heroVideo: data.heroVideo,
+          heroCarousel: data.heroCarousel ?? false,
           thumbnail: data.thumbnail,
         },
         content,

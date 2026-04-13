@@ -4,18 +4,18 @@ import { FadeUp } from "@/components/ui/FadeUp";
 import styles from "./page.module.css";
 
 export default function HomePage() {
-  const projects = getProjects();
+  const projects = getProjects("work");
 
   return (
     <div className={styles.page}>
       <div className="container">
         <FadeUp>
           <p className={styles.intro}>
-            I am a product designer who codes. I solve complex UX problems and ship production code. This site is new, more coming soon.
+            More coming soon <span className="label">4.16.2026</span>
           </p>
         </FadeUp>
-        <FadeUp delay={0.08}>
-          <ProjectGrid projects={projects} layout="modular" />
+        <FadeUp delay={0.06}>
+          <ProjectGrid projects={projects} />
         </FadeUp>
       </div>
     </div>
