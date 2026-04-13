@@ -2,12 +2,12 @@
 
 import {
   ReactNode,
-  forwardRef,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from "react";
+import { animate } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import styles from "./Carousel.module.css";
@@ -37,7 +37,12 @@ export function Carousel({
       const el = scrollRef.current;
       if (!el || count === 0) return;
       const wrapped = ((i % count) + count) % count;
-      el.scrollTo({ left: wrapped * el.offsetWidth, behavior: "smooth" });
+      const target = wrapped * el.offsetWidth;
+      animate(el.scrollLeft, target, {
+        duration: 0.7,
+        ease: [0.4, 0, 0.2, 1],
+        onUpdate: (v) => { el.scrollLeft = v; },
+      });
     },
     [count]
   );
