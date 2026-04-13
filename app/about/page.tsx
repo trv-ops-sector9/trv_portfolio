@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -79,6 +80,10 @@ export default function AboutPage() {
             </dl>
           </aside>
 
+        </div>
+
+        <div className={styles.footer}>
+          <Link href="/" className={styles.backLink}>← Selected work</Link>
         </div>
       </div>
     </div>
