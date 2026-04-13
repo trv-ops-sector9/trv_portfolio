@@ -38,10 +38,13 @@ export function Carousel({
       if (!el || count === 0) return;
       const wrapped = ((i % count) + count) % count;
       const target = wrapped * el.offsetWidth;
+      // Disable snap during animation so it doesn't fight scrollLeft updates
+      el.style.scrollSnapType = "none";
       animate(el.scrollLeft, target, {
         duration: 0.7,
         ease: [0.4, 0, 0.2, 1],
         onUpdate: (v) => { el.scrollLeft = v; },
+        onComplete: () => { el.style.scrollSnapType = ""; },
       });
     },
     [count]
