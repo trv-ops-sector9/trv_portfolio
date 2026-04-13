@@ -63,7 +63,7 @@ export function Carousel({
             className={styles.btn}
             onClick={() => scrollTo(index - 1)}
           >
-            <ChevronLeft size={16} strokeWidth={1.5} />
+            <ChevronLeft size={20} strokeWidth={1.5} />
           </button>
 
           <div className={styles.dots}>
@@ -84,7 +84,7 @@ export function Carousel({
             className={styles.btn}
             onClick={() => scrollTo(index + 1)}
           >
-            <ChevronRight size={16} strokeWidth={1.5} />
+            <ChevronRight size={20} strokeWidth={1.5} />
           </button>
         </div>
       )}
