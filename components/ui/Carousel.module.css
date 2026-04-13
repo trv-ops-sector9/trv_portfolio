@@ -32,53 +32,37 @@
   scroll-snap-align: start;
 }
 
-/* ─── Prev / Next buttons ────────────────────────────────────────────────── */
-.btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: var(--radius-full);
-  background: var(--color-bg);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+/* ─── Controls row (prev · dots · next) ─────────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding-block-start: var(--space-3);
 }
 
-.viewport:hover .btn {
-  opacity: 1;
+.btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
 .btn:hover {
   color: var(--color-text);
-  background: var(--color-bg-muted);
-}
-
-.btn:disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.btnPrev {
-  left: 12px;
-}
-
-.btnNext {
-  right: 12px;
 }
 
 /* ─── Dots ───────────────────────────────────────────────────────────────── */
 .dots {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 6px;
-  padding-block-start: var(--space-3);
 }
 
 .dot {

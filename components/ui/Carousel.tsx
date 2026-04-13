@@ -53,40 +53,39 @@ export function Carousel({
         <div ref={scrollRef} className={styles.scroller} onScroll={handleScroll}>
           {children}
         </div>
-
-        {count > 1 && (
-          <>
-            <button
-              type="button"
-              aria-label="Previous"
-              className={cn(styles.btn, styles.btnPrev)}
-              onClick={() => scrollTo(index - 1)}
-            >
-              <ChevronLeft size={20} strokeWidth={1.5} />
-            </button>
-            <button
-              type="button"
-              aria-label="Next"
-              className={cn(styles.btn, styles.btnNext)}
-              onClick={() => scrollTo(index + 1)}
-            >
-              <ChevronRight size={20} strokeWidth={1.5} />
-            </button>
-          </>
-        )}
       </div>
 
       {count > 1 && (
-        <div className={styles.dots}>
-          {Array.from({ length: count }, (_, i) => (
-            <button
-              key={i}
-              type="button"
-              aria-label={`Slide ${i + 1}`}
-              className={cn(styles.dot, i === index && styles.dotActive)}
-              onClick={() => scrollTo(i)}
-            />
-          ))}
+        <div className={styles.controls}>
+          <button
+            type="button"
+            aria-label="Previous"
+            className={styles.btn}
+            onClick={() => scrollTo(index - 1)}
+          >
+            <ChevronLeft size={16} strokeWidth={1.5} />
+          </button>
+
+          <div className={styles.dots}>
+            {Array.from({ length: count }, (_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Slide ${i + 1}`}
+                className={cn(styles.dot, i === index && styles.dotActive)}
+                onClick={() => scrollTo(i)}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            aria-label="Next"
+            className={styles.btn}
+            onClick={() => scrollTo(index + 1)}
+          >
+            <ChevronRight size={16} strokeWidth={1.5} />
+          </button>
         </div>
       )}
     </div>
