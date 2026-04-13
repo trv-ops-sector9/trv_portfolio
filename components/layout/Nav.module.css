@@ -51,6 +51,15 @@
   color: var(--color-text);
 }
 
+.linkDisabled {
+  font-size: var(--text-sm);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-normal);
+  opacity: 0.35;
+  cursor: default;
+  white-space: nowrap;
+}
+
 .themeToggle {
   display: flex;
   align-items: center;

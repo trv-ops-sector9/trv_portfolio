@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Traver Phillips",
+    default: "Traver Phillips / portfolio of work",
     template: "%s | Traver Phillips",
   },
   description: "Senior product designer specializing in design systems and interaction detail that makes technology feel trustworthy and legible.",

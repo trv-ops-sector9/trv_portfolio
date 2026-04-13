@@ -1,6 +1,18 @@
 .page {
-  padding-block-start: var(--space-5);
+  padding-block-start: var(--space-7);
   padding-block-end: var(--space-8);
+}
+
+.intro {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-light);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-muted);
+  max-width: 48ch;
+  padding-block-end: var(--space-6);
+  margin-block-end: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .gridRule {

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/content";
-import { assetPath } from "@/lib/assetPath";
 import { Prose } from "@/components/ui/Prose";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./page.module.css";
 
 interface Props {
@@ -28,8 +29,23 @@ export default async function WorkProjectPage({ params }: Props) {
 
   const { project, content, lede } = result;
 
+  // Next project: all work sorted by slug, wraps around
+  const allProjects = getProjects("work").sort((a, b) => a.slug.localeCompare(b.slug));
+  const currentIndex = allProjects.findIndex((p) => p.slug === slug);
+  const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
+
   return (
     <article className={styles.article}>
+
+      {/* Sticky back bar */}
+      <div className={styles.stickyBar}>
+        <div className="container">
+          <Link href="/work" className={styles.backLink}>
+            ← Work
+          </Link>
+        </div>
+      </div>
+
       <div className="container">
         <FadeUp>
           <header className={styles.header}>
@@ -42,16 +58,15 @@ export default async function WorkProjectPage({ params }: Props) {
           </header>
         </FadeUp>
 
-        {/* Hero section */}
-        <FadeUp delay={0.1}>
-          <div className={styles.hero} aria-hidden="true">
-            {project.heroVideo ? (
+        {project.heroVideo ? (
+          <FadeUp delay={0.1}>
+            <div className={styles.hero}>
               <video width="100%" height="100%" autoPlay muted loop playsInline>
-                <source src={assetPath(project.heroVideo!)} type="video/mp4" />
+                <source src={assetPath(project.heroVideo)} type="video/mp4" />
               </video>
-            ) : null}
-          </div>
-        </FadeUp>
+            </div>
+          </FadeUp>
+        ) : null}
 
         <FadeUp delay={0.18}>
           <div className={styles.body}>
@@ -59,6 +74,27 @@ export default async function WorkProjectPage({ params }: Props) {
           </div>
         </FadeUp>
       </div>
+
+      {/* Next project */}
+      {nextProject && (
+        <div className={styles.nextSection}>
+          <div className="container">
+            <Link href={`/work/${nextProject.slug}`} className={styles.nextCard}>
+              {nextProject.thumbnail && (
+                <div className={styles.nextThumb}>
+                  <img src={assetPath(nextProject.thumbnail)} alt="" />
+                </div>
+              )}
+              <div className={styles.nextContent}>
+                <span className={styles.nextLabel}>Next</span>
+                <span className={styles.nextTitle}>{nextProject.title}</span>
+              </div>
+              <span className={styles.nextArrow}>→</span>
+            </Link>
+          </div>
+        </div>
+      )}
+
     </article>
   );
 }

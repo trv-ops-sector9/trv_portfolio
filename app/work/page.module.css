@@ -1,0 +1,12 @@
+.page {
+  padding-block-start: var(--space-7);
+  padding-block-end: var(--space-8);
+}
+
+.heading {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-block-end: var(--space-7);
+}

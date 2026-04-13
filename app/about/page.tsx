@@ -21,15 +21,32 @@ export default function AboutPage() {
 
             <div className={styles.body}>
               <p>
-                Product and interaction designer. Twelve years shipping complex
-                digital products, mostly at Microsoft. Motion design is where
-                I go deeper than most.
+                Fifteen years designing digital products. Scrappy roots. I got
+                a job doing digital design before I finished school and never
+                looked back.
               </p>
               <p>
-                I work best at the intersection of design and engineering.
-                Finding the gap between the two and building something that
-                bridges it. The motion system for Fluent 2 is a good example
-                of that.
+                Design and engineering were never separate in my mind. Agency
+                years at WeAreRoyale, Digital Kitchen, and Razorfish were where
+                I really learned to design. High output, high standards, real
+                deadlines.
+              </p>
+              <p>
+                Amazon came next. Entertainment, Kindle, advertising at scale.
+                That's where systems thinking started to take over.
+              </p>
+              <p>
+                At Microsoft I went deep on motion systems and Fluent 2 in the
+                second half of my time there, always working alongside
+                engineers. Eventually I started building the tools myself and
+                never stopped.
+              </p>
+              <p>
+                Now I code. That's not a footnote, it's the direction.
+              </p>
+              <p>
+                In my free time: car builder, fabricator, rally driver,
+                instructor.
               </p>
             </div>
 

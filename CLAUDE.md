@@ -11,7 +11,6 @@
 ### Phase 1: Identity & Structure
 - Next.js 16 App Router, static export
 - Name: Traver Phillips | Email: traver4@gmail.com | Seattle, WA
-- Domain: https://traverphillips.com
 - Nav: Work, About (all other sections removed)
 
 ### Phase 2: Content Cleanup

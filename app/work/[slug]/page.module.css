@@ -1,5 +1,31 @@
 .article {
-  padding-block: var(--space-7) var(--space-8);
+  padding-block-end: var(--space-8);
+}
+
+/* ─── Sticky back bar ──────────────────────────────────────────────────── */
+.stickyBar {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 10;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-3);
+}
+
+.backLink {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-subtle);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.backLink:hover {
+  color: var(--color-text);
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────── */
+.header {
+  margin-block: var(--space-7);
 }
 
 /* ─── Breadcrumb ───────────────────────────────────────────────────────── */
@@ -121,6 +147,66 @@
   color: var(--color-text-muted);
 }
 
+/* ─── Next project ─────────────────────────────────────────────────────── */
+.nextSection {
+  margin-block-start: var(--space-9);
+  border-top: 1px solid var(--color-border);
+  padding-block-start: var(--space-7);
+  padding-block-end: var(--space-8);
+}
+
+.nextCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.nextCard:hover {
+  opacity: 0.7;
+}
+
+.nextThumb {
+  width: 120px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--color-surface);
+}
+
+.nextThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nextContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.nextLabel {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+.nextTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-light);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.nextArrow {
+  font-size: var(--text-lg);
+  color: var(--color-text-subtle);
+  flex-shrink: 0;
+}
+
 /* ─── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .title {
@@ -129,5 +215,13 @@
 
   .description {
     font-size: var(--text-base);
+  }
+
+  .nextThumb {
+    width: 80px;
+  }
+
+  .nextTitle {
+    font-size: var(--text-md);
   }
 }

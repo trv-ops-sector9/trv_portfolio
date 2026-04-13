@@ -118,6 +118,10 @@
   border-color: var(--color-text);
 }
 
+.prose :global(.work-section--solo) {
+  grid-template-columns: 1fr;
+}
+
 @media (max-width: 900px) {
   .prose :global(.work-section) {
     grid-template-columns: 1fr;

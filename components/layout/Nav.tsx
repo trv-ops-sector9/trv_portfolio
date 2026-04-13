@@ -5,7 +5,10 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/ui/ThemeProvider";
 import styles from "./Nav.module.css";
 
-const links = [
+const links: { href: string; label: string; disabled?: boolean }[] = [
+  { href: "/work", label: "Work" },
+  { href: "#", label: "Tools", disabled: true },
+  { href: "#", label: "Experiments", disabled: true },
   { href: "/about", label: "About" },
 ];
 
@@ -21,14 +24,18 @@ export function Nav() {
         </Link>
 
         <ul className={styles.links}>
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className={`${styles.link} ${pathname.startsWith(href) ? styles.active : ""}`}
-              >
-                {label}
-              </Link>
+          {links.map(({ href, label, disabled }) => (
+            <li key={label}>
+              {disabled ? (
+                <span className={styles.linkDisabled}>{label}</span>
+              ) : (
+                <Link
+                  href={href}
+                  className={`${styles.link} ${pathname.startsWith(href) ? styles.active : ""}`}
+                >
+                  {label}
+                </Link>
+              )}
             </li>
           ))}
           <li>
