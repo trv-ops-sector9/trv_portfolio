@@ -32,7 +32,7 @@ lede: "A CSS token system for live-swapping motion and visual identity at runtim
 <div class="work-section work-section--solo">
 <div class="work-section-body">
 <h3>Motion themes</h3>
-<p>Five presets. Standard: neutral ease-out, safe for any product. Dense: compressed curves for data-heavy interfaces. Expressive: spring overshoot and bounce, for consumer products. Relaxed: slow, fluid transitions for editorial and ambient contexts. Reduced: minimal motion, respects <code>prefers-reduced-motion</code> and a manual override attribute. Adding a new preset is one CSS file.</p>
+<p>Four presets. Standard: neutral ease-out, safe for any product. Dense: compressed curves for data-heavy interfaces. Expressive: spring overshoot and bounce, for consumer products. Relaxed: slow, fluid transitions for editorial and ambient contexts. Reduced: minimal motion, respects <code>prefers-reduced-motion</code> and a manual override attribute. Adding a new preset is one CSS file.</p>
 </div>
 </div>
 
