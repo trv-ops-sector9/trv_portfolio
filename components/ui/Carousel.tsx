@@ -24,6 +24,7 @@ export function Carousel({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [count, setCount] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   /* Count items once after mount */
   useEffect(() => {
@@ -47,8 +48,19 @@ export function Carousel({
     setIndex(Math.round(el.scrollLeft / el.offsetWidth));
   }, []);
 
+  /* Autoplay — pause on hover/manual interaction */
+  useEffect(() => {
+    if (count < 2 || paused) return;
+    const id = setInterval(() => scrollTo(index + 1), 3000);
+    return () => clearInterval(id);
+  }, [count, index, paused, scrollTo]);
+
   return (
-    <div className={cn(styles.root, className)}>
+    <div
+      className={cn(styles.root, className)}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className={styles.viewport}>
         <div ref={scrollRef} className={styles.scroller} onScroll={handleScroll}>
           {children}
@@ -61,7 +73,7 @@ export function Carousel({
             type="button"
             aria-label="Previous"
             className={styles.btn}
-            onClick={() => scrollTo(index - 1)}
+            onClick={() => { setPaused(true); scrollTo(index - 1); setTimeout(() => setPaused(false), 6000); }}
           >
             <ChevronLeft size={20} strokeWidth={1.5} />
           </button>
@@ -82,7 +94,7 @@ export function Carousel({
             type="button"
             aria-label="Next"
             className={styles.btn}
-            onClick={() => scrollTo(index + 1)}
+            onClick={() => { setPaused(true); scrollTo(index + 1); setTimeout(() => setPaused(false), 6000); }}
           >
             <ChevronRight size={20} strokeWidth={1.5} />
           </button>
