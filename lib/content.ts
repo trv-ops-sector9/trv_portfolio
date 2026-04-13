@@ -27,6 +27,7 @@ function readSection(section: Project["section"]): Project[] {
         heroVideo: data.heroVideo,
         heroCarousel: data.heroCarousel ?? false,
         thumbnail: data.thumbnail,
+        yearDisplay: data.yearDisplay,
       } satisfies Project;
     })
     .sort((a, b) => b.year - a.year);
@@ -68,6 +69,7 @@ export function getProject(
           heroVideo: data.heroVideo,
           heroCarousel: data.heroCarousel ?? false,
           thumbnail: data.thumbnail,
+          yearDisplay: data.yearDisplay,
         },
         content,
         lede: data.lede,

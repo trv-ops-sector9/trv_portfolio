@@ -2,7 +2,8 @@
 title: "Fluent 2 Motion Guidelines"
 description: "Bridging design and engineering for motion in Fluent 2. A shared system, tools designers could use, and education that made motion part of the conversation from the start."
 category: "Design Systems"
-year: 2024
+year: 2026
+yearDisplay: "2024 – 2026"
 span: 12
 tags: ["Fluent 2", "Motion", "Design Systems"]
 heroVideo: "/fluent-2-motion-hero.mp4"

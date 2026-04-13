@@ -16,6 +16,7 @@ export interface Project {
   heroVideo?: string;
   heroCarousel?: boolean;
   thumbnail?: string;
+  yearDisplay?: string;
 }
 
 interface ProjectCardProps {
@@ -37,7 +38,7 @@ export function ProjectCard({ project, index, priority }: ProjectCardProps) {
         <div className={styles.meta}>
           <span className={styles.category}>{project.category}</span>
           <span className={styles.dot} aria-hidden="true">·</span>
-          <span className={styles.year}>{project.year}</span>
+          <span className={styles.year}>{project.yearDisplay ?? project.year}</span>
         </div>
       </div>
 

@@ -9,13 +9,13 @@ export default function HomePage() {
   return (
     <div className={styles.page}>
       <div className="container">
-        <FadeUp>
+        <FadeUp delay={0.06}>
+          <ProjectGrid projects={projects} />
+        </FadeUp>
+        <FadeUp delay={0.12}>
           <p className={styles.intro}>
             More coming soon <span className="label">4.16.2026</span>
           </p>
-        </FadeUp>
-        <FadeUp delay={0.06}>
-          <ProjectGrid projects={projects} />
         </FadeUp>
       </div>
     </div>
