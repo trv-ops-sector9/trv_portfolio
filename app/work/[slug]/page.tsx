@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/content";
+import { assetPath } from "@/lib/assetPath";
 import { Prose } from "@/components/ui/Prose";
 import { FadeUp } from "@/components/ui/FadeUp";
 import styles from "./page.module.css";
@@ -46,7 +47,7 @@ export default async function WorkProjectPage({ params }: Props) {
           <div className={styles.hero} aria-hidden="true">
             {project.heroVideo ? (
               <video width="100%" height="100%" autoPlay muted loop playsInline>
-                <source src={project.heroVideo} type="video/mp4" />
+                <source src={assetPath(project.heroVideo!)} type="video/mp4" />
               </video>
             ) : null}
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./ProjectCard.module.css";
 
 export type ProjectSpan = 3 | 4 | 6 | 8 | 12;
@@ -36,7 +37,7 @@ export function ProjectCard({ project, span = 4, priority }: ProjectCardProps) {
       <div className={styles.image} aria-hidden="true">
         {project.thumbnail ? (
           <img
-            src={project.thumbnail}
+            src={assetPath(project.thumbnail)}
             alt=""
             className={styles.thumbnailImg}
             loading={priority ? "eager" : "lazy"}
