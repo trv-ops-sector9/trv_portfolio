@@ -27,7 +27,6 @@ export function Carousel({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [count, setCount] = useState(0);
-  const [paused, setPaused] = useState(false);
   const isAnimating = useRef(false);
 
   const childArray = Children.toArray(children);
@@ -91,12 +90,6 @@ export function Carousel({
     setIndex(Math.round(el.scrollLeft / el.offsetWidth));
   }, []);
 
-  useEffect(() => {
-    if (count < 2 || paused) return;
-    const id = setInterval(() => scrollTo(index + 1), 3000);
-    return () => clearInterval(id);
-  }, [count, index, paused, scrollTo]);
-
   // Clone the first slide and append it so the forward wrap animates inline
   const firstChild = childArray[0];
   const cloneOfFirst = isValidElement(firstChild)
@@ -104,11 +97,7 @@ export function Carousel({
     : null;
 
   return (
-    <div
-      className={cn(styles.root, className)}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
+    <div className={cn(styles.root, className)}>
       <div className={styles.viewport}>
         <div ref={scrollRef} className={styles.scroller} onScroll={handleScroll}>
           {children}
@@ -122,7 +111,7 @@ export function Carousel({
             type="button"
             aria-label="Previous"
             className={styles.btn}
-            onClick={() => { setPaused(true); scrollTo(index - 1); setTimeout(() => setPaused(false), 6000); }}
+            onClick={() => scrollTo(index - 1)}
           >
             <ChevronLeft size={20} strokeWidth={1.5} />
           </button>
@@ -143,7 +132,7 @@ export function Carousel({
             type="button"
             aria-label="Next"
             className={styles.btn}
-            onClick={() => { setPaused(true); scrollTo(index + 1); setTimeout(() => setPaused(false), 6000); }}
+            onClick={() => scrollTo(index + 1)}
           >
             <ChevronRight size={20} strokeWidth={1.5} />
           </button>
