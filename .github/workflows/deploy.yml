@@ -33,7 +33,6 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_PRIVATE_PASSWORD: ${{ secrets.PRIVATE_PASSWORD }}
-          NEXT_PUBLIC_BASE_PATH: /trv_portfolio
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
