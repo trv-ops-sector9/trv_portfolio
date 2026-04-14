@@ -10,6 +10,12 @@ heroCarousel: true
 lede: "To me, motion is part of the design and should be included at the same stage as visual design, or earlier during UX and wireframing. It informs how an app looks, feels, and works just as much as color or typography, and is an important part of product voice and branding. Design theme previewers and generators are not hard to find. Motion previewers are more rare. A tool that combines both and is easy to update and expand simply doesn't exist, at least not that I've found. So I built it myself."
 ---
 
+<div class="work-section work-section--solo">
+<div class="work-section-body">
+<p><a href="https://trv-ops-sector9.github.io/motiif/" target="_blank" rel="noopener">Open Motiif site →</a></p>
+</div>
+</div>
+
 <div class="callout">
 <span class="callout-label">Hero demo</span>
 <h3>Fleet Ops</h3>
