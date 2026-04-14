@@ -27,7 +27,7 @@ lede: "Motion for Fluent 2 was being treated as an afterthought. My motion desig
 </div>
 <div class="work-section-body">
 <h3>Motion token specifications</h3>
-<p>A spec framework that lets teams define motion once and use it everywhere. Duration, easing, direction, and timing structured to flow from After Effects into code. I iterated across multiple versions; the final spec pushed further than what was adopted, with component anatomy, interactive demos, and timeline visualizations mapping easing curves and sequencing for each transition state. Microsoft's central design team picked it up and uses it across their systems.</p>
+<p>I created several iterations of a motion spec template for standardizing handoff to engineering. Previously specs were created ad hoc and engineering teams differed in their needs, so spec interpretation was off and implementation looked nothing like the original designs. I interviewed engineers and based the final template on their feedback. We discovered that handing off actual code was causing additional issues and was too much for this template. The final version included a timeline, component anatomy, Fluent 2 motion tokens per element, and clear usage direction with interactive and video examples. This helped clear up spec implementation and understanding for designers, PMs, and engineers.</p>
 </div>
 </div>
 
