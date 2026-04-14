@@ -37,7 +37,7 @@ lede: "Motion for Fluent 2 was being treated as an afterthought. My motion desig
 </div>
 <div class="work-section-body">
 <h3>Figma interactive library</h3>
-<p>The existing Fluent 2 motion components didn't match the specs, so I rebuilt them from scratch. Real components moving the way they should, accurate to the system, so teams could validate in context rather than approximate.</p>
+<p>I observed designers creating motion demos with random patterns applied, which wasn't representing the Fluent 2 motion system accurately and was causing confusion and redundant requests. To fix that, I created a 1:1 version of the Fluent 2 component library for Figma with interactivity and motion baked in. This made it easier for designers to create their own demos with the correct Fluent 2 motion theme and tokens, leading to better representations of the finished product and stronger design and UX decisions.</p>
 </div>
 </div>
 
