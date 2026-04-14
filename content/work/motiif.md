@@ -7,7 +7,7 @@ span: 12
 tags: ["CSS", "Design Systems", "Motion", "Tailwind v4"]
 thumbnail: "/motiif-thumbnail.svg"
 heroCarousel: true
-lede: "To me, motion is part of the design and should be included at the same stage as visual design, or earlier during UX and wireframing. It informs how an app looks, feels, and works just as much as color or typography, and is an important part of product voice and branding. Design theme previewers and generators are not hard to find. Motion previewers are more rare. A tool that combines both and is easy to update and expand doesn't exist, at least not that I've found. So I built it myself."
+lede: "To me, motion is part of the design and should be included at the same stage as visual design, or earlier during UX and wireframing. It informs how an app looks, feels, and works just as much as color or typography, and is an important part of product voice and branding. Design theme previewers and generators are not hard to find. Motion previewers are more rare. A tool that combines both and is easy to update and expand simply doesn't exist, at least not that I've found. So I built it myself."
 ---
 
 <div class="callout">
