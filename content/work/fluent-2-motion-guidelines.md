@@ -8,7 +8,7 @@ span: 12
 tags: ["Fluent 2", "Motion", "Design Systems"]
 heroVideo: "/fluent-2-motion-hero.mp4"
 thumbnail: "/fluent-2-motion-thumb.png"
-lede: "As motion design lead for BIC, Microsoft's business applications org, designing custom motion product by product wasn't scaling across Fluent 2. Specs existed but lived on the engineering side. Designers couldn't read them, contribute to them, or build from them. The answer was a shared system: public guidelines, motion token specs, and a Figma library teams could actually use."
+lede: "Motion for Fluent 2 was being treated as an afterthought. My motion design wasn't making it into product. Designers and engineers weren't working from the same reference, and I was making one-off demos by hand that disappeared after handoff. I built a system that helped fix that."
 ---
 
 <div class="work-section">
