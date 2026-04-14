@@ -1,5 +1,5 @@
 ---
-title: "Fluent 2 Motion Guidelines"
+title: "Motion Design System — Fluent 2 / BIC"
 description: "Bridging design and engineering for motion in Fluent 2. A shared system, tools designers could use, and education that made motion part of the conversation from the start."
 category: "Design Systems"
 year: 2026
@@ -43,6 +43,4 @@ lede: "Motion for Fluent 2 was being treated as an afterthought. My motion desig
 
 #### Outcome
 
-The goal was never to make motion flashier. It was to make it intentional. Before, motion was added at render time because it looked good. After, it enters the design conversation early. Teams reference the guidelines, use the vocabulary with purpose, and know how to ask for what they need. Motion went from invisible to visible. The token spec was adopted by Microsoft's central design team, and the volume of motion design requests I received grew substantially as awareness spread.
-
-<p class="kicker">Motion that belongs to the system, not a one-off flourish.</p>
+After presenting this work to the larger design group at Microsoft, basic motion requests dropped off and were replaced with requests for missing patterns in Fluent 2. The motion system had been vague on specifics, which showed up in the product and made it feel cheap and unfinished. Building these tools helped drive quality and make sure it carried through to implementation. Evangelizing motion design at scale was a key part of the outcome. I educated a lot of people who are now thinking about motion in the initial phases of design, and not as an afterthought.
