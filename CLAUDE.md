@@ -78,8 +78,18 @@ Assets in `public/`:
 
 ---
 
+## Carousel (MotiifCarousel)
+
+- `components/ui/Carousel.tsx` — full infinite loop carousel with clone-first and clone-last for seamless wrap in both directions
+- Arrows sit outside the image in CSS grid gutters, fade in on hover, rapid-click guarded via `isAnimating` ref
+- Clicking an image opens a lightbox modal via `createPortal` into `document.body`, locks body scroll, closes on backdrop/image click or Escape
+- `onMouseOver` on scroller sets `cursor: zoom-in` dynamically (CSS approaches had hydration issues)
+- Autoplay removed
+
 ## Notes
 
 - Build passes clean. All routes render.
 - Static export: all dynamic routes need `generateStaticParams()`
 - Theme toggle: geometric contrast icon (half-filled circle SVG), rotates 180deg in dark mode
+- Custom domain: traverphillips.com (GitHub Pages). CNAME file in `public/`. No basePath in deploy workflow.
+- Do not push without asking Traver first.

@@ -166,7 +166,7 @@ export function Carousel({
             className={styles.scroller}
             onScroll={handleScroll}
             onClick={handleScrollerClick}
-            onMouseMove={(e) => {
+            onMouseOver={(e) => {
               const el = e.currentTarget;
               el.style.cursor = (e.target as HTMLElement).tagName === "IMG" ? "zoom-in" : "default";
             }}

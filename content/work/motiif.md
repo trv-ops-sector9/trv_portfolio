@@ -27,9 +27,9 @@ lede: "To me, motion is part of the design and should be included at the same st
 <div class="work-section-body">
 <h3>Design themes</h3>
 <p>Motiif is meant to be expanded. It is compatible with most CSS design theme systems and is set up to inject new themes quickly and easily. Three design themes are included as starting points:</p>
-<p><strong>Graphite</strong><br/>A balanced theme, useful for most apps and a great starting point.</p>
-<p><strong>Guchi</strong><br/>A more refined theme that uses earth tones, light borders, and generous spacing to create a premium app feel.</p>
-<p><strong>Tactical</strong><br/>A more specific style targeted at gaming, dense UI, and systems operations.</p>
+<p><strong>Graphite:</strong> A balanced theme, useful for most apps and a great starting point.</p>
+<p><strong>Guchi:</strong> A more refined theme that uses earth tones, light borders, and generous spacing to create a premium app feel.</p>
+<p><strong>Tactical:</strong> A more specific style targeted at gaming, dense UI, and systems operations.</p>
 <p>The next version of Motiif will have a one-click CSS theme import feature, making it even easier to test and demo your designs.</p>
 </div>
 </div>
@@ -39,15 +39,18 @@ lede: "To me, motion is part of the design and should be included at the same st
 <h3>Motion themes</h3>
 <p>An app without good UX motion design feels incomplete, cheap, and flat. Abrupt transitions cause change blindness, unusual patterns are disorienting, and overdone motion feels overwhelming. Including motion in the design and planning stages reveals opportunities where it can guide user attention, clarify flows, and inform UX decisions. Motiif makes it easy to rapidly switch between motion themes in a live environment, far more useful than a video or static demo.</p>
 <p>Five motion themes are included as starting points:</p>
-<p><strong>Standard</strong><br/>Balanced Y transitions and simple fade ups, safe for any product.</p>
-<p><strong>Dense</strong><br/>Fast durations and micro Y movements, 2-4px, built for data-heavy UI.</p>
-<p><strong>Expressive</strong><br/>Overshoots, bounces, and scales, best for consumer and lighter products.</p>
-<p><strong>Relaxed</strong><br/>Shared axis X movement, calm and orienting, good for most apps.</p>
-<p><strong>Reduced</strong><br/>Minimal fades only, for sensitive users.</p>
+<p><strong>Standard:</strong> Balanced Y transitions and simple fade ups, safe for any product.</p>
+<p><strong>Dense:</strong> Fast durations and micro Y movements, 2-4px, built for data-heavy UI.</p>
+<p><strong>Expressive:</strong> Overshoots, bounces, and scales, best for consumer and lighter products.</p>
+<p><strong>Relaxed:</strong> Shared axis X movement, calm and orienting, good for most apps.</p>
+<p><strong>Reduced:</strong> Minimal fades only, for sensitive users.</p>
 <p>The next version of Motiif will include one-click motion theme import.</p>
 </div>
 </div>
 
-#### Outcome
-
-Motiif started as a gap I couldn't find a solution for, so I built one. It proves that design and motion can be prototyped and tested together quickly and scaled across entire systems. Motion shouldn't be an afterthought. Motiif proves it doesn't have to be.
+<div class="work-section work-section--solo">
+<div class="work-section-body">
+<h3>Outcome</h3>
+<p>Motiif started as a gap I couldn't find a solution for, so I built one. It proves that design and motion can be prototyped and tested together quickly and scaled across entire systems. Motion shouldn't be an afterthought. Motiif proves it doesn't have to be.</p>
+</div>
+</div>

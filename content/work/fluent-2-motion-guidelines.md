@@ -41,6 +41,9 @@ lede: "Motion for Fluent 2 was being treated as an afterthought. My motion desig
 </div>
 </div>
 
-#### Outcome
-
-After presenting this work to the larger design group at Microsoft, basic motion requests dropped off and were replaced with requests for missing patterns in Fluent 2. The motion system had been vague on specifics, which showed up in the product and made it feel cheap and unfinished. Building these tools helped drive quality and make sure it carried through to implementation. Evangelizing motion design at scale was a key part of the outcome. I educated a lot of people who are now thinking about motion in the initial phases of design, and not as an afterthought.
+<div class="work-section work-section--solo">
+<div class="work-section-body">
+<h3>Outcome</h3>
+<p>After presenting this work to the larger design group at Microsoft, basic motion requests dropped off and were replaced with requests for missing patterns in Fluent 2. The motion system had been vague on specifics, which showed up in the product and made it feel cheap and unfinished. Building these tools helped drive quality and make sure it carried through to implementation. Evangelizing motion design at scale was a key part of the outcome. I educated a lot of people who are now thinking about motion in the initial phases of design, and not as an afterthought.</p>
+</div>
+</div>
