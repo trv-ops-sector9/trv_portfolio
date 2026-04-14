@@ -8,7 +8,7 @@ span: 12
 tags: ["Fluent 2", "Motion", "Design Systems"]
 heroVideo: "/fluent-2-motion-hero.mp4"
 thumbnail: "/fluent-2-motion-thumb.png"
-lede: "Motion for Fluent 2 was being treated as an afterthought. My motion design wasn't making it into product. Designers and engineers weren't working from the same reference, and I was making one-off demos by hand that disappeared after handoff. I built a system that helped fix that."
+lede: "Motion for Fluent 2 was being treated as an afterthought. My motion design wasn't making it into product. Designers and engineers weren't working from the same reference, and I was making one-off demos that disappeared after handoff. I built a system that helped fix that."
 ---
 
 <div class="work-section">
