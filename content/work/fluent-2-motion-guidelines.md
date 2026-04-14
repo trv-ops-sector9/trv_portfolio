@@ -17,7 +17,7 @@ lede: "Motion for Fluent 2 was being treated as an afterthought. My motion desig
 </div>
 <div class="work-section-body">
 <h3>Public motion guidelines</h3>
-<p>Led with Chris Lorance and Andrew Falk, published on <a href="https://fluent2.microsoft.design/motion">fluent2.microsoft.design/motion</a>. The page opens with four motion principles (functional, natural, consistent, appealing) each with video examples grounding them in real product behavior. From there: duration and easing specs with curves and timing values, transition types broken out by context (enter/exit, elevation changes, navigation, container transforms), choreography guidance for multi-element surfaces, and a closing section on accessible motion covering reduced motion preferences and vestibular sensitivity.</p>
+<p>The first step was creating a high level motion guideline to align everyone. I saw a gap and brought in the Fluent 2 design team to help fill it. PMs, designers, and engineers all needed to understand what we were trying to achieve, which was more consistency and quality in our apps UI. I led the creation of the motion guidelines on the Fluent 2 website, which include principles, examples, and an overall approach to creating motion for products.</p>
 </div>
 </div>
 
