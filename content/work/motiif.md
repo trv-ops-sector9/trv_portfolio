@@ -19,7 +19,7 @@ lede: "To me, motion is part of the design and should be included at the same st
 <div class="callout">
 <span class="callout-label">Hero demo</span>
 <h3>Fleet Ops</h3>
-<p>A mission control dashboard for autonomous vehicle fleet management. Leaflet map, vehicle telemetry, incident review workflow. Built as proof that Motiif tokens hold up under real product conditions. Dense motion theme throughout. Every transition, every press state, every toast — all running off the same token layer.</p>
+<p>FleetOps is an AV delivery vehicle tracking system. It live tracks vehicles in the fleet and displays current routes, progress, and systems monitoring. It is also set up to provide alerts for incidents in the AV systems, traffic, and any other events that affect the fleet. The FleetOps demo is a POC that stress tests Motiif and shows that rapid design and motion iteration in a real product environment is possible when set up correctly.</p>
 </div>
 
 <div class="work-section work-section--solo">
