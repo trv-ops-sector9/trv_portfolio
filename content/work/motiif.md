@@ -10,16 +10,11 @@ heroCarousel: true
 lede: "To me, motion is part of the design and should be included at the same stage as visual design, or earlier during UX and wireframing. It informs how an app looks, feels, and works just as much as color or typography, and is an important part of product voice and branding. Design theme previewers and generators are not hard to find. Motion previewers are more rare. A tool that combines both and is easy to update and expand doesn't exist, at least not that I've found. So I created it."
 ---
 
-<div class="work-section work-section--solo">
-<div class="work-section-body">
-<p><a href="https://trv-ops-sector9.github.io/motiif/" target="_blank" rel="noopener">Open live site →</a></p>
-</div>
-</div>
-
 <div class="callout">
 <span class="callout-label">Hero demo</span>
 <h3>Fleet Ops</h3>
 <p>FleetOps is an AV delivery vehicle tracking system. It live tracks vehicles in the fleet and displays current routes, progress, and systems monitoring. It is also set up to provide alerts for incidents in the AV systems, traffic, and any other events that affect the fleet. The FleetOps demo is a POC that stress tests Motiif and shows that rapid design and motion iteration in a real product environment is possible when set up correctly.</p>
+<p><a href="https://trv-ops-sector9.github.io/motiif/" target="_blank" rel="noopener">Open FleetOps Demo →</a></p>
 </div>
 
 <div class="work-section work-section--solo">
