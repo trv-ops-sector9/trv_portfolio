@@ -1,29 +1,33 @@
 /* ─── Root ───────────────────────────────────────────────────────────────── */
 .root {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: var(--space-3);
   width: 100%;
 }
 
-/* ─── Viewport (clips slides, anchors nav buttons) ──────────────────────── */
+/* ─── Viewport ───────────────────────────────────────────────────────────── */
 .viewport {
-  position: relative;
+  grid-column: 2;
+  grid-row: 1;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--color-border);
 }
 
-/* ─── Scroller (native horizontal scroll-snap) ──────────────────────────── */
+/* ─── Scroller ───────────────────────────────────────────────────────────── */
 .scroller {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;          /* Firefox */
+  scrollbar-width: none;
 }
 
 .scroller::-webkit-scrollbar {
-  display: none;                  /* Chrome / Safari */
+  display: none;
 }
 
 /* ─── Item ───────────────────────────────────────────────────────────────── */
@@ -32,57 +36,135 @@
   scroll-snap-align: start;
 }
 
-/* ─── Controls row (prev · dots · next) ─────────────────────────────────── */
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-3);
-  padding-block-start: var(--space-3);
-}
-
+/* ─── Arrow buttons ──────────────────────────────────────────────────────── */
 .btn {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-full);
+  background: transparent;
+  border: 1px solid var(--color-border);
   color: var(--color-text-muted);
   cursor: pointer;
-  flex-shrink: 0;
-  transition: color var(--duration-fast) var(--ease-out);
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.root:hover .btn {
+  opacity: 1;
 }
 
 .btn:hover {
   color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+
+.btnPrev {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.btnNext {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: center;
 }
 
 /* ─── Dots ───────────────────────────────────────────────────────────────── */
 .dots {
+  grid-column: 1 / -1;
+  grid-row: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border: none;
   border-radius: var(--radius-full);
   padding: 0;
   cursor: pointer;
   background: var(--color-border-strong);
-  opacity: 0.45;
+  opacity: 0.5;
   transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 }
 
 .dot:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .dotActive {
   background: var(--color-amber);
   opacity: 1;
-  transform: scale(1.3);
+  transform: scale(1.4);
+}
+
+
+/* ─── Lightbox ───────────────────────────────────────────────────────────── */
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  animation: fadeIn 0.2s ease;
+}
+
+.lightboxInner {
+  position: relative;
+  display: inline-flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+  cursor: zoom-out;
+  display: block;
+  animation: scaleIn 0.2s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lightboxClose {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  z-index: 1;
+}
+
+.lightboxClose:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.5);
 }

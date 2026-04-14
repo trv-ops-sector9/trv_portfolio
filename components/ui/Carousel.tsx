@@ -10,10 +10,47 @@ import {
   useRef,
   useState,
 } from "react";
+import { createPortal } from "react-dom";
 import { animate } from "motion/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import styles from "./Carousel.module.css";
+
+/* ─── Lightbox ───────────────────────────────────────────────────────────── */
+
+function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  return createPortal(
+    <div className={styles.lightboxBackdrop} onClick={onClose}>
+      <div className={styles.lightboxInner}>
+        <img
+          src={src}
+          alt=""
+          className={styles.lightboxImg}
+          onClick={onClose}
+        />
+        <button
+          type="button"
+          aria-label="Close"
+          className={styles.lightboxClose}
+          onClick={onClose}
+        >
+          <X size={18} strokeWidth={1.5} />
+        </button>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 /* ─── Carousel ───────────────────────────────────────────────────────────── */
 
@@ -27,6 +64,7 @@ export function Carousel({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [count, setCount] = useState(0);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const isAnimating = useRef(false);
 
   const childArray = Children.toArray(children);
@@ -35,6 +73,13 @@ export function Carousel({
     setCount(childArray.length);
   }, [childArray.length]);
 
+  // Position scroller at first real slide (clone-of-last sits at DOM position 0)
+  useEffect(() => {
+    if (count === 0) return;
+    const el = scrollRef.current;
+    if (el) el.scrollLeft = el.offsetWidth;
+  }, [count]);
+
   const scrollTo = useCallback(
     (i: number) => {
       const el = scrollRef.current;
@@ -42,19 +87,17 @@ export function Carousel({
 
       const forwardWrap = i >= count;
       const backWrap = i < 0;
-
       let scrollTarget: number;
       let nextIndex: number;
 
       if (forwardWrap) {
-        // Animate into the clone appended after the last real slide
-        scrollTarget = count * el.offsetWidth;
+        scrollTarget = (count + 1) * el.offsetWidth;
         nextIndex = 0;
       } else if (backWrap) {
-        scrollTarget = (count - 1) * el.offsetWidth;
+        scrollTarget = 0;
         nextIndex = count - 1;
       } else {
-        scrollTarget = i * el.offsetWidth;
+        scrollTarget = (i + 1) * el.offsetWidth;
         nextIndex = i;
       }
 
@@ -63,20 +106,13 @@ export function Carousel({
       animate(el.scrollLeft, scrollTarget, {
         duration: 1.1,
         ease: [0.4, 0, 0.2, 1],
-        onUpdate: (v) => {
-          el.scrollLeft = v;
-        },
+        onUpdate: (v) => { el.scrollLeft = v; },
         onComplete: () => {
-          if (forwardWrap) {
-            // Silently jump to the real first slide
-            el.scrollLeft = 0;
-          }
+          if (forwardWrap) el.scrollLeft = el.offsetWidth;
+          else if (backWrap) el.scrollLeft = count * el.offsetWidth;
           el.style.scrollSnapType = "";
           setIndex(nextIndex);
-          // Keep isAnimating true until queued scroll events from the jump flush
-          requestAnimationFrame(() => {
-            isAnimating.current = false;
-          });
+          requestAnimationFrame(() => { isAnimating.current = false; });
         },
       });
     },
@@ -87,35 +123,73 @@ export function Carousel({
     if (isAnimating.current) return;
     const el = scrollRef.current;
     if (!el || el.offsetWidth === 0) return;
-    setIndex(Math.round(el.scrollLeft / el.offsetWidth));
+    const rawIndex = Math.round(el.scrollLeft / el.offsetWidth);
+    setIndex(Math.max(0, Math.min(rawIndex - 1, count - 1)));
+  }, [count]);
+
+  // Open lightbox on image click — allow even mid-animation
+  const handleScrollerClick = useCallback((e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === "IMG") {
+      setLightboxSrc((target as HTMLImageElement).src);
+    }
   }, []);
 
-  // Clone the first slide and append it so the forward wrap animates inline
   const firstChild = childArray[0];
+  const lastChild = childArray[childArray.length - 1];
+
+  const cloneOfLast = isValidElement(lastChild)
+    ? cloneElement(lastChild as React.ReactElement, { key: "clone-last" })
+    : null;
+
   const cloneOfFirst = isValidElement(firstChild)
     ? cloneElement(firstChild as React.ReactElement, { key: "clone-first" })
     : null;
 
   return (
-    <div className={cn(styles.root, className)}>
-      <div className={styles.viewport}>
-        <div ref={scrollRef} className={styles.scroller} onScroll={handleScroll}>
-          {children}
-          {cloneOfFirst}
-        </div>
-      </div>
-
-      {count > 1 && (
-        <div className={styles.controls}>
+    <>
+      <div className={cn(styles.root, className)}>
+        {count > 1 && (
           <button
             type="button"
             aria-label="Previous"
-            className={styles.btn}
-            onClick={() => scrollTo(index - 1)}
+            className={cn(styles.btn, styles.btnPrev)}
+            onClick={() => { if (!isAnimating.current) scrollTo(index - 1); }}
           >
-            <ChevronLeft size={20} strokeWidth={1.5} />
+            <ChevronLeft size={22} strokeWidth={1.5} />
           </button>
+        )}
 
+        <div className={styles.viewport}>
+          <div
+            ref={scrollRef}
+            className={styles.scroller}
+            onScroll={handleScroll}
+            onClick={handleScrollerClick}
+            onMouseMove={(e) => {
+              const el = e.currentTarget;
+              el.style.cursor = (e.target as HTMLElement).tagName === "IMG" ? "zoom-in" : "default";
+            }}
+            onMouseLeave={(e) => { e.currentTarget.style.cursor = "default"; }}
+          >
+            {cloneOfLast}
+            {children}
+            {cloneOfFirst}
+          </div>
+        </div>
+
+        {count > 1 && (
+          <button
+            type="button"
+            aria-label="Next"
+            className={cn(styles.btn, styles.btnNext)}
+            onClick={() => { if (!isAnimating.current) scrollTo(index + 1); }}
+          >
+            <ChevronRight size={22} strokeWidth={1.5} />
+          </button>
+        )}
+
+        {count > 1 && (
           <div className={styles.dots}>
             {Array.from({ length: count }, (_, i) => (
               <button
@@ -123,22 +197,17 @@ export function Carousel({
                 type="button"
                 aria-label={`Slide ${i + 1}`}
                 className={cn(styles.dot, i === index && styles.dotActive)}
-                onClick={() => scrollTo(i)}
+                onClick={() => { if (!isAnimating.current) scrollTo(i); }}
               />
             ))}
           </div>
+        )}
+      </div>
 
-          <button
-            type="button"
-            aria-label="Next"
-            className={styles.btn}
-            onClick={() => scrollTo(index + 1)}
-          >
-            <ChevronRight size={20} strokeWidth={1.5} />
-          </button>
-        </div>
+      {lightboxSrc && (
+        <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       )}
-    </div>
+    </>
   );
 }
 

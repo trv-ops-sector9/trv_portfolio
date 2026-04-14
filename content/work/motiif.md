@@ -12,7 +12,7 @@ lede: "To me, motion is part of the design and should be included at the same st
 
 <div class="work-section work-section--solo">
 <div class="work-section-body">
-<p><a href="https://trv-ops-sector9.github.io/motiif/" target="_blank" rel="noopener">Open Motiif site →</a></p>
+<p><a href="https://trv-ops-sector9.github.io/motiif/" target="_blank" rel="noopener">Open Motiif →</a></p>
 </div>
 </div>
 
@@ -22,33 +22,32 @@ lede: "To me, motion is part of the design and should be included at the same st
 <p>FleetOps is an AV delivery vehicle tracking system. It live tracks vehicles in the fleet and displays current routes, progress, and systems monitoring. It is also set up to provide alerts for incidents in the AV systems, traffic, and any other events that affect the fleet. The FleetOps demo is a POC that stress tests Motiif and shows that rapid design and motion iteration in a real product environment is possible when set up correctly.</p>
 </div>
 
+
 <div class="work-section work-section--solo">
 <div class="work-section-body">
-<h3>The problem</h3>
-<p>Most design systems hardcode motion per-component. No shared vocabulary. No global lever. Motiif decouples what gets animated from how it moves. One attribute on the root element rewires duration, easing, and keyframe variants across every animated element on the page. Swap a theme live and prototype a completely different look and feel in seconds.</p>
+<h3>Design themes</h3>
+<p>Motiif is meant to be expanded. It is compatible with most CSS design theme systems and is set up to inject new themes quickly and easily. Three design themes are included as starting points:</p>
+<p><strong>Graphite</strong><br/>A balanced theme, useful for most apps and a great starting point.</p>
+<p><strong>Guchi</strong><br/>A more refined theme that uses earth tones, light borders, and generous spacing to create a premium app feel.</p>
+<p><strong>Tactical</strong><br/>A more specific style targeted at gaming, dense UI, and systems operations.</p>
+<p>The next version of Motiif will have a one-click CSS theme import feature, making it even easier to test and demo your designs.</p>
 </div>
 </div>
 
 <div class="work-section work-section--solo">
 <div class="work-section-body">
 <h3>Motion themes</h3>
-<p>Four presets. Standard: neutral ease-out, safe for any product. Dense: compressed curves for data-heavy interfaces. Expressive: spring overshoot and bounce, for consumer products. Relaxed: slow, fluid transitions for editorial and ambient contexts. Reduced: minimal motion, respects <code>prefers-reduced-motion</code> and a manual override attribute. Adding a new preset is one CSS file.</p>
+<p>An app without good UX motion design feels incomplete, cheap, and flat. Abrupt transitions cause change blindness, unusual patterns are disorienting, and overdone motion feels overwhelming. Including motion in the design and planning stages reveals opportunities where it can guide user attention, clarify flows, and inform UX decisions. Motiif makes it easy to rapidly switch between motion themes in a live environment, far more useful than a video or static demo.</p>
+<p>Five motion themes are included as starting points:</p>
+<p><strong>Standard</strong><br/>Balanced Y transitions and simple fade ups, safe for any product.</p>
+<p><strong>Dense</strong><br/>Fast durations and micro Y movements, 2-4px, built for data-heavy UI.</p>
+<p><strong>Expressive</strong><br/>Overshoots, bounces, and scales, best for consumer and lighter products.</p>
+<p><strong>Relaxed</strong><br/>Shared axis X movement, calm and orienting, good for most apps.</p>
+<p><strong>Reduced</strong><br/>Minimal fades only, for sensitive users.</p>
+<p>The next version of Motiif will include one-click motion theme import.</p>
 </div>
 </div>
 
-<div class="work-section work-section--solo">
-<div class="work-section-body">
-<h3>Design themes</h3>
-<p>Ships with three visual identities. Graphite: design-tool neutral. Guchi: luxury fashion, warm and diffused. Tactical: FUI command-and-control, no shadows, tight radius. Each changes radius, shadow style, font family, border-width, letter-spacing, and font-weight. Not just color. New themes drop in the same way. One CSS file, zero component changes.</p>
-</div>
-</div>
+#### Outcome
 
-<div class="work-section work-section--solo">
-<div class="work-section-body">
-<h3>Architecture</h3>
-<p>Two-layer token architecture. Primitives define durations and curves per theme. Alias tokens inside Tailwind v4's <code>@theme</code> block generate utility classes from those primitives at runtime. A semantic bridge layer maps intent variables (<code>--motion-curve-navigation</code>, <code>--motion-curve-press-release</code>) to the active theme. Components reference intent, never the theme directly.</p>
-<p>Adding a new theme is one CSS file. No component changes, no bridge layer changes. Output is vanilla CSS custom properties, so tokens export cleanly to any platform or framework. Adaptable by design.</p>
-</div>
-</div>
-
-<p class="kicker">Built for engineers to implement and designers to reason about.</p>
+Motiif started as a gap I couldn't find a solution for, so I built one. It proves that design and motion can be prototyped and tested together quickly and scaled across entire systems. Motion shouldn't be an afterthought. Motiif proves it doesn't have to be.

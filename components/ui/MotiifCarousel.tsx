@@ -22,6 +22,7 @@ export function MotiifCarousel() {
             src={assetPath(src)}
             alt={`Motiif screenshot ${i + 1}`}
             className={styles.img}
+            data-zoomable
             loading={i === 0 ? "eager" : "lazy"}
           />
         </CarouselItem>
