@@ -1,7 +1,10 @@
 "use client";
 
 import {
+  Children,
   ReactNode,
+  cloneElement,
+  isValidElement,
   useCallback,
   useEffect,
   useRef,
@@ -25,43 +28,80 @@ export function Carousel({
   const [index, setIndex] = useState(0);
   const [count, setCount] = useState(0);
   const [paused, setPaused] = useState(false);
+  const isAnimating = useRef(false);
 
-  /* Count items once after mount */
+  const childArray = Children.toArray(children);
+
   useEffect(() => {
-    const el = scrollRef.current;
-    if (el) setCount(el.children.length);
-  }, [children]);
+    setCount(childArray.length);
+  }, [childArray.length]);
 
   const scrollTo = useCallback(
     (i: number) => {
       const el = scrollRef.current;
       if (!el || count === 0) return;
-      const wrapped = ((i % count) + count) % count;
-      const target = wrapped * el.offsetWidth;
-      // Disable snap during animation so it doesn't fight scrollLeft updates
+
+      const forwardWrap = i >= count;
+      const backWrap = i < 0;
+
+      let scrollTarget: number;
+      let nextIndex: number;
+
+      if (forwardWrap) {
+        // Animate into the clone appended after the last real slide
+        scrollTarget = count * el.offsetWidth;
+        nextIndex = 0;
+      } else if (backWrap) {
+        scrollTarget = (count - 1) * el.offsetWidth;
+        nextIndex = count - 1;
+      } else {
+        scrollTarget = i * el.offsetWidth;
+        nextIndex = i;
+      }
+
+      isAnimating.current = true;
       el.style.scrollSnapType = "none";
-      animate(el.scrollLeft, target, {
+      animate(el.scrollLeft, scrollTarget, {
         duration: 1.1,
         ease: [0.4, 0, 0.2, 1],
-        onUpdate: (v) => { el.scrollLeft = v; },
-        onComplete: () => { el.style.scrollSnapType = ""; },
+        onUpdate: (v) => {
+          el.scrollLeft = v;
+        },
+        onComplete: () => {
+          if (forwardWrap) {
+            // Silently jump to the real first slide
+            el.scrollLeft = 0;
+          }
+          el.style.scrollSnapType = "";
+          setIndex(nextIndex);
+          // Keep isAnimating true until queued scroll events from the jump flush
+          requestAnimationFrame(() => {
+            isAnimating.current = false;
+          });
+        },
       });
     },
     [count]
   );
 
   const handleScroll = useCallback(() => {
+    if (isAnimating.current) return;
     const el = scrollRef.current;
     if (!el || el.offsetWidth === 0) return;
     setIndex(Math.round(el.scrollLeft / el.offsetWidth));
   }, []);
 
-  /* Autoplay — pause on hover/manual interaction */
   useEffect(() => {
     if (count < 2 || paused) return;
     const id = setInterval(() => scrollTo(index + 1), 3000);
     return () => clearInterval(id);
   }, [count, index, paused, scrollTo]);
+
+  // Clone the first slide and append it so the forward wrap animates inline
+  const firstChild = childArray[0];
+  const cloneOfFirst = isValidElement(firstChild)
+    ? cloneElement(firstChild as React.ReactElement, { key: "clone-first" })
+    : null;
 
   return (
     <div
@@ -72,6 +112,7 @@ export function Carousel({
       <div className={styles.viewport}>
         <div ref={scrollRef} className={styles.scroller} onScroll={handleScroll}>
           {children}
+          {cloneOfFirst}
         </div>
       </div>
 
