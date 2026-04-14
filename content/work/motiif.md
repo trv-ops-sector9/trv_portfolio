@@ -20,7 +20,6 @@ lede: "To me, motion is part of the design and should be included at the same st
 <span class="callout-label">Hero demo</span>
 <h3>Fleet Ops</h3>
 <p>FleetOps is an AV delivery vehicle tracking system. It live tracks vehicles in the fleet and displays current routes, progress, and systems monitoring. It is also set up to provide alerts for incidents in the AV systems, traffic, and any other events that affect the fleet. The FleetOps demo is a POC that stress tests Motiif and shows that rapid design and motion iteration in a real product environment is possible when set up correctly.</p>
-<p><a href="https://trv-ops-sector9.github.io/motiif/" target="_blank" rel="noopener">Open FleetOps Demo →</a></p>
 </div>
 
 <div class="work-section work-section--solo">
