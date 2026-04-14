@@ -17,7 +17,7 @@ lede: "Motion for Fluent 2 was being treated as an afterthought. My motion desig
 </div>
 <div class="work-section-body">
 <h3>Public motion guidelines</h3>
-<p>The first step was creating a high level motion guideline to align everyone. I saw a gap and brought in the Fluent 2 design team to help fill it. PMs, designers, and engineers all needed to understand what we were trying to achieve, which was more consistency and quality in our apps UI. I led the creation of the motion guidelines on the Fluent 2 website, which include principles, examples, and an overall approach to creating motion for products.</p>
+<p>The first step was creating a high level motion guideline to align everyone. I saw a gap and brought in the Fluent 2 design team to help fill it. PMs, designers, and engineers all needed to understand what we were trying to achieve, which was more consistency and quality in our apps UI. I led the creation of the motion guidelines on the Fluent 2 website, which include principles, examples, and an overall approach to creating motion for products. <a href="https://fluent2.microsoft.design/motion">fluent2.microsoft.design/motion</a></p>
 </div>
 </div>
 
