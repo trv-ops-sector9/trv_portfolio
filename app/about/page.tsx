@@ -16,38 +16,25 @@ export default function AboutPage() {
           {/* Bio column */}
           <div className={styles.bio}>
             <header className={styles.header}>
-              <span className={styles.label}>Problem solver. Product designer.</span>
               <h1 className={styles.name}>Traver Phillips</h1>
             </header>
 
             <div className={styles.body}>
               <p>
-                Fifteen years designing digital products. Scrappy roots. I got
-                a job doing digital design before I finished school and never
-                looked back.
+                I design products and specialize in motion design.
               </p>
               <p>
-                Design and engineering were never separate in my mind. Agency
-                years at WeAreRoyale, Digital Kitchen, and Razorfish were where
-                I really learned to design. High output, high standards, real
-                deadlines.
+                I learned my craft at agencies, WeAreRoyale, Digital Kitchen,
+                and Razorfish. Microsoft taught me how big organizations work
+                and how to get things done inside them.
               </p>
               <p>
-                Amazon came next. Entertainment, Kindle, advertising at scale.
-                That's where systems thinking started to take over.
+                I like to build tools that help connect engineering and design.
+                That is where my work is headed.
               </p>
               <p>
-                At Microsoft I went deep on motion systems and Fluent 2 in the
-                second half of my time there, always working alongside
-                engineers. Eventually I started building the tools myself and
-                never stopped.
-              </p>
-              <p>
-                Now I code. That's not a footnote, it's the direction.
-              </p>
-              <p>
-                In my free time: car builder, fabricator, rally driver,
-                driving instructor.
+                Outside of work I build and race cars, do fabrication and 3D
+                printing, and teach performance driving.
               </p>
             </div>
 

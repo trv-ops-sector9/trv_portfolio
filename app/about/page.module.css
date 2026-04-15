@@ -11,8 +11,6 @@
 
 /* ─── Bio ──────────────────────────────────────────────────────────────── */
 .header {
-  border-top: 1px solid var(--color-border);
-  padding-block-start: var(--space-4);
   margin-block-end: var(--space-5);
 }
 
@@ -66,8 +64,6 @@
 
 /* ─── Aside ────────────────────────────────────────────────────────────── */
 .aside {
-  border-top: 1px solid var(--color-border);
-  padding-block-start: var(--space-4);
 }
 
 .info {
