@@ -4,10 +4,11 @@
 }
 
 .intro {
+  font-family: var(--font-display);
   font-size: var(--text-md);
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-medium);
   line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-muted);
   max-width: 48ch;
   padding-block-start: var(--space-6);

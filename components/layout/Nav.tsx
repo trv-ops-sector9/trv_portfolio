@@ -6,6 +6,9 @@ import { useTheme } from "@/components/ui/ThemeProvider";
 import styles from "./Nav.module.css";
 
 const links: { href: string; label: string }[] = [
+  { href: "/work", label: "Work" },
+  { href: "/explorations", label: "Explorations" },
+  { href: "/fabrication", label: "Fabrication" },
   { href: "/about", label: "About" },
 ];
 

@@ -1,53 +1,8 @@
 # Portfolio Project Status
 
-## Style Rules
-- No em dashes anywhere in the portfolio. Use periods, commas, colons, or parentheses instead.
-- Copy tone: short sentences, design speak, no AI fluff. Traver writes the final copy.
+## Design Rules
 
----
-
-## Live Case Studies
-
-### Case Study 1: Fluent 2 Motion Guidelines
-**File:** `content/work/fluent-2-motion-guidelines.md`
-**Status:** Complete and live
-
-- Motion design lead at Microsoft on Fluent 2 design system
-- Worked with Chris Lorance (senior motion designer) and Andrew Falk (supervisor)
-- Covers: public guidelines on fluent2.microsoft.design, motion token spec template, Figma interactive component library
-
-Assets in `public/`:
-- `fluent-2-motion-hero.mp4` (hero video, 10MB)
-- `fluent-2-motion-thumb.png` (card thumbnail)
-- `FLuent2_Motinguidleines_website.png` (Fluent 2 website screenshot)
-- `FigmaCompLibrary_01.png` (Figma component library screenshot)
-- `SpecTemplate_v2 1.png` (motion token spec template)
-
-### Case Study 2: Motiif
-**File:** `content/work/motiif.md`
-**Status:** Complete and live
-
-- CSS token system for live-swapping motion and visual identity at runtime
-- Carousel hero using `MotiifCarousel` component
-- Screenshots in `public/Motiif_SS/img1-6.png`
-- Thumbnail: `public/motiif-thumbnail.svg`
-
----
-
-## In Progress: Case Study #3 (Demo Reel)
-
-**Concept:** A short demo reel compiling animated artifacts from years of work at Microsoft.
-
-**Status:** Traver is assembling the reel manually in After Effects.
-
-**Artifact source:** `/Users/traverphillips/Dropbox/!PORTFOLIO_2025/Presentation2025_Artifacts/!Videos/`
-- `!ReelPicks/` — final clip picks (do not touch)
-- `Reel cuts - Revised.csv` — finalized clip list with in timestamps, bar lengths, priorities
-
-**Next steps:**
-1. Traver finishes AE edit and exports reel
-2. Write short case study copy (let the reel do the talking)
-3. Add as third case study on /work
+<!-- Paste new design and layout rules here -->
 
 ---
 
@@ -58,38 +13,49 @@ Assets in `public/`:
 - Markdown content in `content/work/`
 - Parsed via `lib/content.ts`, rendered via `Prose` component (react-markdown + remark-gfm + rehype-raw)
 
+**Fonts (via next/font/google):**
+- `--font-display`: Jost — headings
+- `--font-sans`: IBM Plex Sans — body
+- `--font-mono`: IBM Plex Mono — labels, metadata
+
 **Critical Files:**
-- `app/layout.tsx` - site metadata, Nav, Footer
-- `app/page.tsx` - Home (project grid + intro label)
-- `app/about/page.tsx` - About page
-- `app/work/page.tsx` - Work listing
-- `app/work/[slug]/page.tsx` - Work detail (renders hero + prose)
-- `components/layout/Nav.tsx` - Navigation (Work, About) + theme toggle
-- `components/ui/ProjectCard.tsx` - Card with thumbnail support
-- `components/ui/MotiifCarousel.tsx` - Carousel for Motiif case study
-- `lib/content.ts` - Markdown parser (extracts heroVideo, heroCarousel, thumbnail from frontmatter)
-- `content/work/*.md` - Case study content
+- `app/layout.tsx` — site metadata, fonts, Nav, Footer, ScrollToTop, PageTransition
+- `app/page.tsx` — Home
+- `app/about/page.tsx` — About page
+- `app/work/page.tsx` — Work listing
+- `app/work/[slug]/page.tsx` — Work detail (renders hero + prose)
+- `components/layout/Nav.tsx` — Navigation (Work, About) + theme toggle
+- `components/layout/SectionHeader.tsx` — Section header with label, title, description, count
+- `components/ui/ProjectCard.tsx` — Card with thumbnail support
+- `components/ui/ProjectGrid.tsx` — Renders project list via ProjectCard
+- `components/ui/MotiifCarousel.tsx` — Carousel used in Motiif case study
+- `components/ui/Carousel.tsx` — Core infinite-loop carousel implementation
+- `components/ui/FadeUp.tsx` — Motion fade-up wrapper
+- `components/ui/PageTransition.tsx` — Route-keyed page fade/slide transition
+- `components/ui/ScrollToTop.tsx` — Instant scroll reset on route change
+- `components/ui/Prose.tsx` — Renders markdown content
+- `components/ui/ThemeProvider.tsx` — Dark/light theme context
+- `lib/content.ts` — Markdown parser
+- `lib/assetPath.ts` — Resolves NEXT_PUBLIC_BASE_PATH prefix for static assets
+- `lib/utils.ts` — `cn()` class name utility
+- `content/work/*.md` — Case study content
 
-**Frontmatter fields:** slug, title, description, category, year, span, tags, heroVideo, heroCarousel, thumbnail, lede
-
-**Orphaned routes (not linked from nav, kept for future use):**
-- `app/private/` - password-gated page for client work
-- `app/store/` - coming soon stub
+**Frontmatter fields:** slug, title, description, category, year, yearDisplay, span, tags, heroVideo, heroCarousel, thumbnail, lede
 
 ---
 
-## Carousel (MotiifCarousel)
+## Carousel
 
-- `components/ui/Carousel.tsx` — full infinite loop carousel with clone-first and clone-last for seamless wrap in both directions
-- Arrows sit outside the image in CSS grid gutters, fade in on hover, rapid-click guarded via `isAnimating` ref
-- Clicking an image opens a lightbox modal via `createPortal` into `document.body`, locks body scroll, closes on backdrop/image click or Escape
-- `onMouseOver` on scroller sets `cursor: zoom-in` dynamically (CSS approaches had hydration issues)
+- `components/ui/Carousel.tsx` — infinite loop, clone-first/clone-last for seamless wrap both directions
+- Arrows in CSS grid gutters, fade on hover, rapid-click guarded via `isAnimating` ref
+- Image click opens lightbox via `createPortal`, locks body scroll, closes on backdrop/image click or Escape
+- `onMouseOver` sets `cursor: zoom-in` dynamically
 - Autoplay removed
 
 ## Notes
 
 - Build passes clean. All routes render.
 - Static export: all dynamic routes need `generateStaticParams()`
-- Theme toggle: geometric contrast icon (half-filled circle SVG), rotates 180deg in dark mode
-- Custom domain: traverphillips.com (GitHub Pages). CNAME file in `public/`. No basePath in deploy workflow.
+- Theme toggle: half-filled circle SVG, rotates 180deg in dark mode
+- Custom domain: traverphillips.com (GitHub Pages). CNAME in `public/`. No basePath in deploy workflow.
 - Do not push without asking Traver first.

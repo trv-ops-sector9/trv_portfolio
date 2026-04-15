@@ -26,6 +26,7 @@ function readSection(section: Project["section"]): Project[] {
         tags: data.tags ?? [],
         heroVideo: data.heroVideo,
         heroCarousel: data.heroCarousel ?? false,
+        heroPlaceholder: data.heroPlaceholder ?? false,
         thumbnail: data.thumbnail,
         yearDisplay: data.yearDisplay,
       } satisfies Project;
@@ -41,6 +42,8 @@ export function getProjects(
     ...readSection("work"),
     ...readSection("projects"),
     ...readSection("experiments"),
+    ...readSection("explorations"),
+    ...readSection("fabrication"),
   ].sort((a, b) => b.year - a.year);
 }
 
@@ -68,6 +71,7 @@ export function getProject(
           tags: data.tags ?? [],
           heroVideo: data.heroVideo,
           heroCarousel: data.heroCarousel ?? false,
+          heroPlaceholder: data.heroPlaceholder ?? false,
           thumbnail: data.thumbnail,
           yearDisplay: data.yearDisplay,
         },

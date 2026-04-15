@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/content";
 import { CaseStudyPage } from "@/components/templates/CaseStudyPage";
 
@@ -8,17 +7,17 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return getProjects("work").map((p) => ({ slug: p.slug }));
+  return getProjects("explorations").map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const result = getProject("work", slug);
+  const result = getProject("explorations", slug);
   if (!result) return {};
   return { title: result.project.title, description: result.project.description };
 }
 
-export default async function WorkProjectPage({ params }: Props) {
+export default async function ExplorationsProjectPage({ params }: Props) {
   const { slug } = await params;
-  return <CaseStudyPage section="work" slug={slug} />;
+  return <CaseStudyPage section="explorations" slug={slug} />;
 }

@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import { getProjects } from "@/lib/content";
 import { ProjectGrid } from "@/components/ui/ProjectGrid";
 import { FadeUp } from "@/components/ui/FadeUp";
-import styles from "./page.module.css";
+import styles from "../work/page.module.css";
 
 export const metadata: Metadata = {
-  title: "Work",
-  description: "Selected work by Traver Phillips, 2024–2026.",
+  title: "Explorations",
+  description: "Personal experiments and side projects by Traver Phillips.",
 };
 
-export default function WorkPage() {
-  const projects = getProjects("work");
+export default function ExplorationsPage() {
+  const projects = getProjects("explorations");
 
   return (
     <div className={styles.page}>
       <div className="container">
         <FadeUp>
-          <p className={`label ${styles.sectionLabel}`}>Selected work, 2024–2026</p>
+          <p className={`label ${styles.sectionLabel}`}>Explorations</p>
         </FadeUp>
         <FadeUp delay={0.06}>
           <ProjectGrid projects={projects} />

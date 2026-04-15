@@ -10,11 +10,12 @@ export interface Project {
   description: string;
   category: string;
   year: number;
-  section: "work" | "projects" | "experiments";
+  section: "work" | "projects" | "experiments" | "explorations" | "fabrication";
   span?: ProjectSpan;
   tags?: string[];
   heroVideo?: string;
   heroCarousel?: boolean;
+  heroPlaceholder?: boolean;
   thumbnail?: string;
   yearDisplay?: string;
 }
