@@ -1,9 +1,71 @@
 # Portfolio Project Status
 
+
 ## Design Rules
 
-<!-- Paste new design and layout rules here -->
+### Aesthetic Direction
+Futuristic UI. HUD, heads-up display, instrument panel aesthetic.
+Clinical spacing, technical details, corner brackets, precise grid.
+Reference points: Haltech ECU interface, Linear, Raycast. Not Dribbble, not Cargo.
+Full redesigns are expected and encouraged. The first pass is always too safe. Push further.
 
+**Visual reference (3D render, matte dark surfaces):**
+- Gunmetal/charcoal matte panels, precision-cut geometry — no soft radii, no rounded cards
+- Red as glowing edge trim and small cube accents only — functional, not decorative
+- Ground plane grid lines etched at low opacity
+- Dot-matrix texture on surface panels (subtle, not loud)
+- Layered depth through shadow and atmospheric haze, not color contrast
+- Floating panel forms at varied heights — like a PCB or circuit board layout from above
+- The accent (red) appears at corners, edges, and as small isolated marks — never as fill or gradient
+
+### Anti-Patterns — Never Build These
+- No tag pills or category label chips on work items
+- No centered hero layout
+- No card grid
+- No social link footer row
+- No Inter, Space Grotesk, or system fonts
+- No purple gradients
+- No work item rows that are visually equal — hierarchy matters
+- No asymmetric layouts
+- Do not replicate the vmedium.github.io layout or structure
+
+### Typography
+- Jost (`--font-display`) for headings and display text
+- IBM Plex Sans (`--font-sans`) for body text
+- IBM Plex Mono (`--font-mono`) for labels and metadata only
+- Type scale should feel considered, not defaulted
+
+### Color
+- Near-monochrome base
+- Single functional accent, used sparingly
+- Dark theme primary
+- Color carries meaning, never decoration
+
+### Layout
+- Full page redesign is expected and encouraged
+- HUD aesthetic applies to every element: nav, layout, work items, footer
+- Work items have visual hierarchy based on importance, not equal rows
+- Generous negative space used deliberately, not as placeholder
+- The sparseness of the content (2 case studies) should feel intentional, not unfinished
+- Be bold. Push further than feels comfortable.
+
+### Motion
+- Motion is the primary discipline — it must be legible in the site itself
+- Every interactive element has a considered hover state
+- Scroll behavior is not an afterthought
+- No transition: all 0.3s ease anywhere
+- Motion communicates state and hierarchy, never decoration
+
+### Differentiators
+- The automotive/fabrication background is unusual for a UX designer — let it show in the texture and precision of the design
+- The builder/engineer identity should show in the precision of design decisions, not called out explicitly
+- Motion as infrastructure, not polish
+
+### Stack
+- Next.js 16 App Router, static export
+- Motion (Framer Motion v12) for animation
+- CSS custom properties for all tokens
+- No Tailwind
 ---
 
 ## Tech Stack & Key Files
